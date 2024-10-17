@@ -4,7 +4,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import theme from "../../../../theme";
-import ParticlesComponent from '../../../../components/StyledButton/AnimatedBackground/ParticlesComponent';
+//import ParticlesComponent from '../../../../components/StyledButton/AnimatedBackground/ParticlesComponent';
 
 
 const Hero = () => {
@@ -30,7 +30,7 @@ const Hero = () => {
              <Grid item xs={12} md={5}>
                 <Box position="relative">
                   <Box position="absolute" width={"100%"} top={-100} right={0}>
-                  <ParticlesComponent/>
+                
                   </Box>
                   <Box position="absolute" textAlign="center">
                      <StyledImg src={Avatar} />
