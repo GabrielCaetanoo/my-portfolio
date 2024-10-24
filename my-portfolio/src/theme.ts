@@ -8,6 +8,10 @@ let theme = createTheme({
         secondary: {
             main: '#F3F7EC',
         },
+        success: {
+            main: '#3C3D37',
+            contrastText: '#729762',
+        }
     },
     typography: {
         fontFamily: "sans-serif"
