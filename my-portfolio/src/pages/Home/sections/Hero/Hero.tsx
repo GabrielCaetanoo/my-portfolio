@@ -5,22 +5,49 @@ import EmailIcon from '@mui/icons-material/Email';
 import { AnimatedBackground } from '../../../../components/StyledButton/AnimatedBackground/AnimatedBackground';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import theme from "../../../../theme";
+import { RefObject } from "react";
 
-const Hero = () => {
+interface HeroProps {
+    aboutRef: RefObject<HTMLDivElement>;
+    skillsRef: RefObject<HTMLDivElement>;
+    projectsRef: RefObject<HTMLDivElement>;
+}
+
+const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
+
+    const Separator = styled("div")(() => ({
+        borderBottom: "2px solid rgba(255, 255, 255, 0.3)", // Altere a cor e espessura conforme necessário
+        margin: "10px 0", // Espaçamento acima e abaixo da linha
+    }));
 
     const StyledHero = styled("div")(({ theme }) => ({
         backgroundColor: theme.palette.primary.main,
         height: "100vh",
         display: "flex",
         alignItems: "center",
-        position: 'relative', // Adicionado para suportar o background absoluto
-        overflow: 'hidden',  // Adicionado para evitar scroll
-        [theme.breakpoints.up('xs')]: { // <= Mobile
-          paddingTop: "50px"
-
+        position: 'relative', 
+        overflow: 'hidden',  
+        [theme.breakpoints.up('xs')]: { 
+            paddingTop: "50px"
         },
-        [theme.breakpoints.up('md')]: { // >= Mobile
+        [theme.breakpoints.up('md')]: { 
+            paddingTop: "0"
+        }
+    }));
 
+    const StyledHero2 = styled("div")(({ theme }) => ({
+        backgroundColor: theme.palette.primary.main,
+        display: "flex",
+        flexDirection: "column", // Alinha o conteúdo em coluna
+        alignItems: "flex-start", // Alinha o conteúdo ao topo
+        position: 'relative',
+        overflow: 'hidden',
+        padding: theme.spacing(4), // Adiciona algum espaço em torno do conteúdo
+        [theme.breakpoints.up('xs')]: {
+            paddingTop: "50px"
+        },
+        [theme.breakpoints.up('md')]: {
+            paddingTop: "0"
         }
 
     }));
@@ -34,16 +61,12 @@ const Hero = () => {
     return (
         <>
             <StyledHero>
-                {/* Animated Background */}
-                <Box position="absolute" top={0} left={0} width="100%" height="100%" zIndex={-1}>
-                </Box>
-                {/* Conteúdo principal */}
+                <Box position="absolute" top={0} left={0} width="100%" height="100%" zIndex={-1} />
                 <Container maxWidth="lg" sx={{ zIndex: 1, position: 'relative' }}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={5}>
                             <Box position="relative" textAlign="center">
-                            <AnimatedBackground/>
-                              {/* //AQUI ERA PRA VIR O BACKGROUND ANIMATED */}
+                                <AnimatedBackground/>
                                 <StyledImg src={Avatar} />
                             </Box>
                         </Grid>
@@ -56,19 +79,20 @@ const Hero = () => {
                             </Typography>
                             <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                    <StyledButton>
+                                    <StyledButton onClick={() => {
+                                        const link = document.createElement("a");
+                                        link.href = "/CV.pdf";  
+                                        link.download = "Gabriel_Caetano_CV.pdf";
+                                        link.click();
+                                    }}>
                                         <DownloadIcon />
-                                        <Typography>
-                                            Download CV
-                                        </Typography>
+                                        <Typography>Download CV</Typography>
                                     </StyledButton>
                                 </Grid>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                    <StyledButton>
+                                    <StyledButton onClick={() => { window.location.href = "mailto:gabrielc0202@hotmail.com" }}>
                                         <EmailIcon />
-                                        <Typography>
-                                            Contact me
-                                        </Typography>
+                                        <Typography>Contact me</Typography>
                                     </StyledButton>
                                 </Grid>
                             </Grid>
@@ -76,8 +100,49 @@ const Hero = () => {
                     </Grid>
                 </Container>
             </StyledHero>
+            <Separator /> {/* Linha de separação */}
+
+
+            {/* Seção "About" */}
+            <StyledHero2 ref={aboutRef}>
+                <Container maxWidth="lg">
+                    <Typography color="primary.contrastText" variant="h1" textAlign="center">
+                        About Me
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea tempora ab nemo neque magni harum sunt voluptate consectetur laboriosam, voluptatem dolores porro unde ratione quia, ad aliquid perferendis vitae incidunt.</h4>
+                    </Typography>
+                    {/* Adicione o conteúdo da seção "About" aqui */}
+                </Container>
+            </StyledHero2>
+            <Separator /> {/* Linha de separação */}
+
+
+            {/* Seção "My Skills" */}
+            <StyledHero2 ref={skillsRef}>
+                <Container maxWidth="lg">
+                    <Typography color="primary.contrastText" variant="h1" textAlign="center">
+                        My Skills
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas perspiciatis tempore nisi facilis laboriosam? Aperiam voluptates corrupti sapiente officiis fugiat id fugit ducimus modi quibusdam blanditiis. Dignissimos, adipisci. Quasi, dolores.</h4>
+                    </Typography>
+                    {/* Adicione o conteúdo da seção "My Skills" aqui */}
+                </Container>
+            </StyledHero2>
+            <Separator /> {/* Linha de separação */}
+
+
+            {/* Seção "Projects" */}
+            <StyledHero2 ref={projectsRef}>
+                <Container maxWidth="lg">
+                    <Typography color="primary.contrastText" variant="h1" textAlign="center">
+                        Projects
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, atque deleniti? Est sed placeat atque quibusdam ad quisquam adipisci officiis, pariatur fugiat fuga eos at reiciendis inventore exercitationem minima necessitatibus?</h4>
+                    </Typography>
+                    {/* Adicione o conteúdo da seção "Projects" aqui */}
+                </Container>
+            </StyledHero2>
+            <Separator /> {/* Linha de separação */}
+
         </>
-    )
-}
+    );
+};
 
 export default Hero;
