@@ -11,10 +11,13 @@ let theme = createTheme({
         success: {
             main: '#3C3D37',
             contrastText: '#729762',
-        }
+        },
+        background: {
+            default: '#729762', // Adicione uma cor de fundo padrão aqui
+        },
     },
     typography: {
-        fontFamily: "Cambria"//"sans-serif"
+        fontFamily: "Cambria"
     }
 });
 
