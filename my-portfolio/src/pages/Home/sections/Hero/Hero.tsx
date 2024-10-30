@@ -76,11 +76,11 @@ const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
                                         <Typography>{translations.hero.contact}</Typography>
                                     </StyledButton>
                                 </Grid>
-                                <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                <StyledButton onClick={toggleLanguage}>
-    🌐 {lang === 'en' ? translations.hero.languageToggle.toPortuguese : translations.hero.languageToggle.toEnglish}
-</StyledButton>
-    </Grid>
+                                    <Grid item xs={12} md={4} display="flex" justifyContent="center">
+                                        <StyledButton onClick={toggleLanguage}>
+                                        🌐 {lang === 'en' ? translations.hero.languageToggle.toPortuguese : translations.hero.languageToggle.toEnglish}
+                                        </StyledButton>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
