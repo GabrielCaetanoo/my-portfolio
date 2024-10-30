@@ -1,4 +1,4 @@
-import { Grid, styled, Container, Typography, Box } from "@mui/material";
+import { Grid, Container, Typography, Box } from "@mui/material";
 import Avatar from "../../../../assets/images/avatar.jpg";
 import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
@@ -7,6 +7,10 @@ import StyledButton from "../../../../components/StyledButton/StyledButton";
 import theme from "../../../../theme";
 import { RefObject } from "react";
 import Projects from '../../../../components/Projects/Projects';
+import i18n from '../../../../../src/public/i18n';
+import React from 'react';
+import translationsEN from '../../../../../src/public/locales/en/translation.json'; // Importando traduções em inglês
+import translationsPT from '../../../../../src/public/locales/pt/translation.json'; // Importando traduções em português
 
 interface HeroProps {
     aboutRef: RefObject<HTMLDivElement>;
@@ -14,174 +18,188 @@ interface HeroProps {
     projectsRef: RefObject<HTMLDivElement>;
 }
 
-const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
+const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
+    const [lang, setLang] = React.useState('en');
 
-    const Separator = styled("div")(() => ({
-        borderBottom: "10px solid rgba(255, 255, 255, 0.3)", // Altere a cor e espessura conforme necessário
-        margin: "10px 0", // Espaçamento acima e abaixo da linha
-    }));
+    const toggleLanguage = () => {
+        const newLang = lang === 'en' ? 'pt' : 'en';
+        i18n.changeLanguage(newLang).then(() => {
+            console.log("Linguagem alterada para:", newLang);
+            setLang(newLang);
+        });
+    };
 
-    const StyledHero = styled("div")(({ theme }) => ({
-        backgroundColor: theme.palette.primary.main,
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        position: 'relative', 
-        overflow: 'hidden',  
-        [theme.breakpoints.up('xs')]: { 
-            paddingTop: "50px"
-        },
-        [theme.breakpoints.up('md')]: { 
-            paddingTop: "0"
-        }
-    }));
-
-    const StyledHero2 = styled("div")(({ theme }) => ({
-        backgroundColor: theme.palette.primary.main,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center", // Alinhamento central
-        justifyContent: "center", // Centraliza verticalmente
-        position: 'relative',
-        overflow: 'hidden',
-        padding: theme.spacing(10),
-        margin: theme.spacing(5, 0), // Margem vertical
-        minHeight: "100vh", // Altura mínima
-        [theme.breakpoints.up('xs')]: {
-            paddingTop: "50px"
-        },
-        [theme.breakpoints.up('md')]: {
-            paddingTop: "0"
-        }
-    }));
-    
-
-    const StyledImg = styled("img")(() => ({
-        width: "95%",
-        borderRadius: "50%",
-        border: `1px solid ${theme.palette.primary.contrastText}`,
-    }));
+    const translations = lang === 'en' ? translationsEN : translationsPT; // Escolhendo traduções com base na linguagem
 
     return (
         <>
-            <StyledHero>
+            <div style={{
+                backgroundColor: theme.palette.primary.main,
+                height: "100vh",
+                display: "flex",
+                alignItems: "center",
+                position: 'relative',
+                overflow: 'hidden',
+                paddingTop: "50px"
+            }}>
                 <Box position="absolute" top={0} left={0} width="100%" height="100%" zIndex={-1} />
                 <Container maxWidth="lg" sx={{ zIndex: 1, position: 'relative' }}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={5}>
                             <Box position="relative" textAlign="center">
-                                <AnimatedBackground/>
-                                <StyledImg src={Avatar} />
+                                <AnimatedBackground />
+                                <img src={Avatar} style={{ width: "95%", borderRadius: "50%", border: `1px solid ${theme.palette.primary.contrastText}` }} />
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={7}>
                             <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>
-                                Gabriel Caetano
+                                {translations.hero.name}
                             </Typography>
                             <Typography color="primary.contrastText" variant="h2" textAlign="center">
-                                I'm a Software Engineer
+                                {translations.hero.title}
                             </Typography>
                             <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
                                     <StyledButton onClick={() => {
                                         const link = document.createElement("a");
-                                        link.href = "/CV.pdf";  
+                                        link.href = "/CV.pdf";
                                         link.download = "Gabriel_Caetano_CV.pdf";
                                         link.click();
                                     }}>
                                         <DownloadIcon />
-                                        <Typography>Download CV</Typography>
+                                        <Typography>{translations.hero.downloadCV}</Typography>
                                     </StyledButton>
                                 </Grid>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
                                     <StyledButton onClick={() => { window.location.href = "mailto:gabrielc0202@hotmail.com" }}>
                                         <EmailIcon />
-                                        <Typography>Contact me</Typography>
+                                        <Typography>{translations.hero.contact}</Typography>
                                     </StyledButton>
                                 </Grid>
+                                <Grid item xs={12} md={4} display="flex" justifyContent="center">
+                                <StyledButton onClick={toggleLanguage}>
+    🌐 {lang === 'en' ? translations.hero.languageToggle.toPortuguese : translations.hero.languageToggle.toEnglish}
+</StyledButton>
+    </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
                 </Container>
-            </StyledHero>
-            <Separator /> {/* Linha de separação */}
+            </div>
 
-        {/* Seção "About" */}
-            <StyledHero2 ref={aboutRef}>
+            <div style={{
+                borderBottom: "10px solid rgba(255, 255, 255, 0.3)",
+                margin: "10px 0",
+            }} />
+
+            <div ref={aboutRef} style={{
+                backgroundColor: theme.palette.primary.main,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                position: 'relative',
+                overflow: 'hidden',
+                padding: theme.spacing(10),
+                margin: theme.spacing(5, 0),
+                minHeight: "100vh",
+            }}>
                 <Container maxWidth="lg">
                     <Typography color="primary.contrastText" variant="h1" textAlign="center">
-                    About Me
+                        {translations.hero.aboutMe}
                     </Typography>
                     <Typography color="primary.contrastText" variant="h5" textAlign="center" paragraph>
-                    Olá! Sou Gabriel Caetano, desenvolvedor com foco em Front-End e estudante de Engenharia de Software. Estou sempre buscando aprimorar minhas habilidades e aprender novas tecnologias. Atualmente, tenho experiência em TypeScript, React, e C++, além de estar desenvolvendo projetos próprios para expandir meus conhecimentos.
+                        {translations.hero.introduction}
                     </Typography>
                     <Typography color="primary.contrastText" variant="h6" textAlign="center" paragraph>
-                    Alguns dos meus projetos incluem uma aplicação de simulação MIPS e um sistema de controle de dosagem de medicamentos, onde pude aplicar conceitos de algoritmos e simulação. Meu sonho é um dia abrir minha própria empresa ou alcançar o cargo de Tech Lead, com a liberdade de trabalhar de qualquer lugar do mundo.
+                        {translations.hero.projects}
                     </Typography>
-                <Grid container justifyContent="center" spacing={2} sx={{ pt: 3 }}>
-                    <Grid item>
-                    <StyledButton onClick={() => window.open("https://www.linkedin.com/in/gabriel-caetano-7a454b149/", "_blank")}>
-                    LinkedIn
-                    </StyledButton>
-                </Grid>
-                <Grid item>
-                    <StyledButton onClick={() => window.open("https://github.com/GabrielCaetanoo", "_blank")}>
-                    GitHub
-                    </StyledButton>
-                </Grid>
-                </Grid>
+                    <Grid container justifyContent="center" spacing={2} sx={{ pt: 3 }}>
+                        <Grid item>
+                            <StyledButton onClick={() => window.open("https://www.linkedin.com/in/gabriel-caetano-7a454b149/", "_blank")}>
+                                {translations.hero.linkedin}
+                            </StyledButton>
+                        </Grid>
+                        <Grid item>
+                            <StyledButton onClick={() => window.open("https://github.com/GabrielCaetanoo", "_blank")}>
+                                {translations.hero.github}
+                            </StyledButton>
+                        </Grid>
+                    </Grid>
                 </Container>
-            </StyledHero2>
-<Separator /> {/* Linha de separação */}
+            </div>
 
+            <div style={{
+                borderBottom: "10px solid rgba(255, 255, 255, 0.3)",
+                margin: "10px 0",
+            }} />
 
-       {/* Seção "My Skills" */}
-<StyledHero2 ref={skillsRef} >
-    <Container maxWidth="lg" >
-        <Typography color="primary.contrastText" variant="h1" textAlign="center" gutterBottom>
-            My Skills
-        </Typography>
-        <Typography color="primary.contrastText" variant="h5" textAlign="center" paragraph>
-            Tecnologias e linguagens que utilizo no desenvolvimento de projetos.
-        </Typography>
-        <Grid container spacing={5} justifyContent="center" sx={{ pt: 5 }}>
-            {/* Ícones das tecnologias */}
-            <Grid item>
-                <Box display="flex" flexDirection="column" alignItems="center">
-                    <i className="devicon-react-original colored" style={{ fontSize: "3rem" }}></i>
-                    <Typography color="primary.contrastText">React</Typography>
-                </Box>
-            </Grid>
-            <Grid item>
-                <Box display="flex" flexDirection="column" alignItems="center">
-                    <i className="devicon-typescript-plain colored" style={{ fontSize: "3rem" }}></i>
-                    <Typography color="primary.contrastText">TypeScript</Typography>
-                </Box>
-            </Grid>
-            <Grid item>
-                <Box display="flex" flexDirection="column" alignItems="center">
-                    <i className="devicon-javascript-plain colored" style={{ fontSize: "3rem" }}></i>
-                    <Typography color="primary.contrastText">JavaScript</Typography>
-                </Box>
-            </Grid>
-            <Grid item>
-                <Box display="flex" flexDirection="column" alignItems="center">
-                    <i className="devicon-cplusplus-plain colored" style={{ fontSize: "3rem" }}></i>
-                    <Typography color="primary.contrastText">C++</Typography>
-                </Box>
-            </Grid>
-            {/* Adicione mais itens conforme necessário */}
-        </Grid>
-    </Container>
-</StyledHero2>
-<Separator  /> {/* Linha de separação */}
-<StyledHero2 ref={projectsRef} sx={{ padding: theme.spacing(4, 0) }}>
-    <Projects />
-</StyledHero2>
-            <Separator /> {/* Linha de separação */}
+            <div ref={skillsRef} style={{
+                backgroundColor: theme.palette.primary.main,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                position: 'relative',
+                overflow: 'hidden',
+                padding: theme.spacing(10),
+                margin: theme.spacing(5, 0),
+            }}>
+                <Container maxWidth="lg">
+                    <Typography color="primary.contrastText" variant="h1" textAlign="center" gutterBottom>
+                        {translations.hero.mySkills}
+                    </Typography>
+                    <Typography color="primary.contrastText" variant="h5" textAlign="center" paragraph>
+                        {translations.hero.skillsIntro}
+                    </Typography>
+                    <Grid container spacing={5} justifyContent="center" sx={{ pt: 5 }}>
+                        {/* Ícones das tecnologias */}
+                        <Grid item>
+                            <Box display="flex" flexDirection="column" alignItems="center">
+                                <i className="devicon-react-original colored" style={{ fontSize: "3rem" }}></i>
+                                <Typography color="primary.contrastText">React</Typography>
+                            </Box>
+                        </Grid>
+                        <Grid item>
+                            <Box display="flex" flexDirection="column" alignItems="center">
+                                <i className="devicon-typescript-plain colored" style={{ fontSize: "3rem" }}></i>
+                                <Typography color="primary.contrastText">TypeScript</Typography>
+                            </Box>
+                        </Grid>
+                        <Grid item>
+                            <Box display="flex" flexDirection="column" alignItems="center">
+                                <i className="devicon-javascript-plain colored" style={{ fontSize: "3rem" }}></i>
+                                <Typography color="primary.contrastText">JavaScript</Typography>
+                            </Box>
+                        </Grid>
+                        <Grid item>
+                            <Box display="flex" flexDirection="column" alignItems="center">
+                                <i className="devicon-cplusplus-plain colored" style={{ fontSize: "3rem" }}></i>
+                                <Typography color="primary.contrastText">C++</Typography>
+                            </Box>
+                        </Grid>
+                    </Grid>
+                </Container>
+            </div>
 
+            <div style={{
+                borderBottom: "10px solid rgba(255, 255, 255, 0.3)",
+                margin: "10px 0",
+            }} />
+
+            <div ref={projectsRef} style={{
+                padding: theme.spacing(4, 0),
+            }}>
+                <Projects />
+            </div>
+
+            <div style={{
+                borderBottom: "10px solid rgba(255, 255, 255, 0.3)",
+                margin: "10px 0",
+            }} />
         </>
     );
 };
 
 export default Hero;
+``

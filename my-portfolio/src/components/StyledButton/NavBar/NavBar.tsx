@@ -15,9 +15,9 @@ const NavBar = ({ onAboutClick, onSkillsClick, onProjectsClick }: NavBarProps) =
     return (
         <AppBar position="absolute">
             <StyledToolbar>
-                <MenuItem onClick={onAboutClick}>About</MenuItem>
-                <MenuItem onClick={onSkillsClick}>Skills</MenuItem>
-                <MenuItem onClick={onProjectsClick}>Projects</MenuItem>
+                <MenuItem onClick={onAboutClick}>Sobre Mim</MenuItem>
+                <MenuItem onClick={onSkillsClick}>Habilidades</MenuItem>
+                <MenuItem onClick={onProjectsClick}>Projetos</MenuItem>
             </StyledToolbar>
         </AppBar>
     );

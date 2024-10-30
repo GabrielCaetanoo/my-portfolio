@@ -1,0 +1,19 @@
+{
+    "hero": {
+        "name": "Gabriel Caetano",
+        "title": "Software Engineer",
+        "downloadCV": "Download CV",
+        "contact": "Contact",
+        "aboutMe": "About Me",
+        "introduction": "Hello! I'm Gabriel Caetano, a developer focused on Front-End and a Software Engineering student. I'm always looking to improve my skills and learn new technologies. Currently, I have experience in TypeScript, React, and C++, in addition to developing my own projects to expand my knowledge.",
+        "projects": "Some of my projects include a MIPS simulation application and a medication dosage control system, where I could apply concepts of algorithms and simulation. My dream is to one day start my own company or reach the position of Tech Lead, with the freedom to work from anywhere in the world.",
+        "mySkills": "My Skills",
+        "skillsIntro": "Technologies and languages I use in project development.",
+        "linkedin": "LinkedIn",
+        "github": "GitHub",
+        "languageToggle": {
+            "toPortuguese": "Português",
+            "toEnglish": "English"
+        }
+    }
+}

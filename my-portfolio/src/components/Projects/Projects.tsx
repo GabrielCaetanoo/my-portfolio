@@ -30,7 +30,7 @@ const Projects = () => {
             }}
         >
             <Typography variant="h1" color={theme.palette.primary.contrastText} textAlign="center">
-                Projects
+                Projetos
             </Typography>
             {projects.length > 0 ? (
                 <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' }, gap: 2, width: '100%' }}>
@@ -52,7 +52,7 @@ const Projects = () => {
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                 >
-                                    View on GitHub
+                                    Veja no GitHUB
                                 </Button>
                             </CardActions>
                         </Card>

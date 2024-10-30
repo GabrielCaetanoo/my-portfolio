@@ -17,7 +17,7 @@ let theme = createTheme({
         },
     },
     typography: {
-        fontFamily: "Cambria"
+        fontFamily: '"Poppins", Cambria, sans-serif'
     }
 });
 
