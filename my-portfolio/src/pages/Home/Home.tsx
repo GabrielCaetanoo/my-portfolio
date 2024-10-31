@@ -11,9 +11,17 @@ const Home = () => {
         ref.current?.scrollIntoView({ behavior: "smooth" });
     };
 
+    // Objeto de traduções
+    const translations = {
+        navBarAbout: "Sobre",        // Atualizado
+        navBarSkills: "Habilidades",  // Atualizado
+        navBarProjects: "Projetos",   // Atualizado
+    };
+
     return (
       <>
         <NavBar 
+          translations={translations} // Passando o objeto de traduções atualizado
           onAboutClick={() => handleScrollTo(aboutRef)}
           onSkillsClick={() => handleScrollTo(skillsRef)}
           onProjectsClick={() => handleScrollTo(projectsRef)}

@@ -1,5 +1,8 @@
 {
     "hero": {
+        "navBarAbout": "About Me",
+        "navBarSkills": "Skills",
+        "navBarProjects": "Projects",
         "name": "Gabriel Caetano",
         "title": "Software Engineer",
         "downloadCV": "Download CV",
@@ -11,9 +14,12 @@
         "skillsIntro": "Technologies and languages I use in project development.",
         "linkedin": "LinkedIn",
         "github": "GitHub",
+        "projectsTitle": "Projects",
+        "viewOnGithub": "View on GitHub",
         "languageToggle": {
             "toPortuguese": "Português",
             "toEnglish": "English"
+
         }
     }
 }

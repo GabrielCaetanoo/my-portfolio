@@ -10,7 +10,14 @@ interface Repository {
     html_url: string;
 }
 
-const Projects = () => {
+interface ProjectsProps {
+    translations: {
+        projectsTitle: string;
+        viewOnGithub: string;
+    };
+}
+
+const Projects = ({ translations }: ProjectsProps) => {
     const [projects, setProjects] = useState<Repository[]>([]);
     const theme = useTheme();
 
@@ -30,7 +37,7 @@ const Projects = () => {
             }}
         >
             <Typography variant="h1" color={theme.palette.primary.contrastText} textAlign="center">
-                Projetos
+                {translations.projectsTitle}
             </Typography>
             {projects.length > 0 ? (
                 <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' }, gap: 2, width: '100%' }}>
@@ -52,7 +59,7 @@ const Projects = () => {
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                 >
-                                    Veja no GitHUB
+                                    {translations.viewOnGithub}
                                 </Button>
                             </CardActions>
                         </Card>

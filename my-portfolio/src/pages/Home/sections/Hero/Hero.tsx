@@ -190,7 +190,10 @@ const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
             <div ref={projectsRef} style={{
                 padding: theme.spacing(4, 0),
             }}>
-                <Projects />
+                <Projects translations={{
+    projectsTitle: translations.hero.projectsTitle,
+    viewOnGithub: translations.hero.viewOnGithub 
+}}/>
             </div>
 
             <div style={{
