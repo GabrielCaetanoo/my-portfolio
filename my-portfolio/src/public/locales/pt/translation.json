@@ -1,8 +1,5 @@
 {
     "hero": {
-        "navBarAbout": "Sobre Mim",
-        "navBarSkills": "Habilidades",
-        "navBarProjects": "Projetos",
         "name": "Gabriel Caetano",
         "title": "Engenheiro de Software",
         "downloadCV": "Baixar CV",
@@ -19,7 +16,11 @@
         "languageToggle": {
             "toPortuguese": "Português",
             "toEnglish": "English"
-
         }
+    },
+    "navbar": {
+        "About": "Sobre Mim",
+        "Skills": "Habilidades",
+        "Projects": "Projetos"
     }
 }

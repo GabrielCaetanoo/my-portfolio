@@ -1,0 +1,9 @@
+{
+    "About": "About Me",
+    "Skills": "Skills",
+    "Projects": "Projects",
+    "languageToggle": {
+        "toPortuguese": "Switch to Portuguese",
+        "toEnglish": "Switch to English"
+    }
+}

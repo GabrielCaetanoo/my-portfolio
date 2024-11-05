@@ -12,13 +12,17 @@ import React from 'react';
 import translationsEN from '../../../../../src/public/locales/en/translation.json'; // Importando traduções em inglês
 import translationsPT from '../../../../../src/public/locales/pt/translation.json'; // Importando traduções em português
 
+
 interface HeroProps {
     aboutRef: RefObject<HTMLDivElement>;
     skillsRef: RefObject<HTMLDivElement>;
     projectsRef: RefObject<HTMLDivElement>;
+    toggleLanguage: () => void;  
+    lang: string;                
+
 }
 
-const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
+const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
     const [lang, setLang] = React.useState('en');
 
     const toggleLanguage = () => {

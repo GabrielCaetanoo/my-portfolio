@@ -5,9 +5,9 @@ interface NavBarProps {
     onSkillsClick: () => void;
     onProjectsClick: () => void;
     translations: {
-        navBarAbout: string; // Alterado
-        navBarSkills: string; // Alterado
-        navBarProjects: string; // Alterado
+        About: string; // Alterado
+        Skills: string; // Alterado
+        Projects: string; // Alterado
     };
 }
 
@@ -20,9 +20,9 @@ const NavBar = ({ onAboutClick, onSkillsClick, onProjectsClick, translations }: 
     return (
         <AppBar position="absolute">
             <StyledToolbar>
-                <MenuItem onClick={onAboutClick}>{translations.navBarAbout}</MenuItem>
-                <MenuItem onClick={onSkillsClick}>{translations.navBarSkills}</MenuItem>
-                <MenuItem onClick={onProjectsClick}>{translations.navBarProjects}</MenuItem>
+                <MenuItem onClick={onAboutClick}>{translations.About}</MenuItem>
+                <MenuItem onClick={onSkillsClick}>{translations.Skills}</MenuItem>
+                <MenuItem onClick={onProjectsClick}>{translations.Projects}</MenuItem>
             </StyledToolbar>
         </AppBar>
     );
