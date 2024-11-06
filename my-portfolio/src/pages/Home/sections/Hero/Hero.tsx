@@ -146,7 +146,7 @@ const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
                 justifyContent: "center",
                 position: 'relative',
                 overflow: 'hidden',
-                padding: theme.spacing(10),
+                padding: theme.spacing(13),
                 margin: theme.spacing(5, 0),
             }}>
                 <Container maxWidth="lg">
