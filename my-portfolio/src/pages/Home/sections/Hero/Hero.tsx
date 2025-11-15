@@ -67,7 +67,7 @@ const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
                             <StyledButton onClick={() => {
                                 const link = document.createElement("a");
                                 // Se o arquivo estiver na pasta 'public', o caminho é apenas a barra + nome do arquivo
-                                link.href = "/CV - GABRIEL_CAETANO_br.pdf"; 
+                                link.href = "/my-portfolio/src/public/CV - GABRIEL_CAETANO_br.pdf"; 
     
                                  // O nome que o arquivo terá quando for baixado no computador da pessoa
                                 link.download = "Gabriel_Caetano_CV.pdf"; 
