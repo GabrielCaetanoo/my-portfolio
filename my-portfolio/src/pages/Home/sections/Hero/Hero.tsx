@@ -66,7 +66,7 @@ const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
                                     <StyledButton onClick={() => {
                                         const link = document.createElement("a");
-                                        link.href = "/CV.pdf";
+                                        link.href = "/my-portfolio/CV - GABRIEL_CAETANO_br.pdf";
                                         link.download = "Gabriel_Caetano_CV.pdf";
                                         link.click();
                                     }}>
