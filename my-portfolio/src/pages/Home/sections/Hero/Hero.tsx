@@ -9,20 +9,18 @@ import { RefObject } from "react";
 import Projects from '../../../../components/Projects/Projects';
 import i18n from '../../../../../src/public/i18n';
 import React from 'react';
-import translationsEN from '../../../../../src/public/locales/en/translation.json'; // Importando traduções em inglês
-import translationsPT from '../../../../../src/public/locales/pt/translation.json'; // Importando traduções em português
-
+import translationsEN from '../../../../../src/public/locales/en/translation.json';
+import translationsPT from '../../../../../src/public/locales/pt/translation.json';
 
 interface HeroProps {
     aboutRef: RefObject<HTMLDivElement>;
     skillsRef: RefObject<HTMLDivElement>;
     projectsRef: RefObject<HTMLDivElement>;
-    toggleLanguage: () => void;  
-    lang: string;                
-
+    toggleLanguage: () => void;
+    lang: string;
 }
 
-const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
+const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
     const [lang, setLang] = React.useState('en');
 
     const toggleLanguage = () => {
@@ -33,7 +31,7 @@ const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
         });
     };
 
-    const translations = lang === 'en' ? translationsEN : translationsPT; // Escolhendo traduções com base na linguagem
+    const translations = lang === 'en' ? translationsEN : translationsPT;
 
     return (
         <>
@@ -64,30 +62,21 @@ const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
                             </Typography>
                             <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-<StyledButton onClick={() => {
-    // 1. Caminho direto (se está na pasta public, é só a barra)
-    const fileUrl = "/CV.pdf";
-    
-    // 2. Cria o elemento link
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    
-    // 3. Força o nome do arquivo no download
-    link.setAttribute("download", "Gabriel_Caetano_CV.pdf");
-    
-    // 4. IMPORTANTE: Adiciona ao corpo do documento (invisível)
-    // Isso é necessário para o Firefox e alguns navegadores funcionarem
-    document.body.appendChild(link);
-    
-    // 5. Simula o clique
-    link.click();
-    
-    // 6. Remove o link do documento para limpar
-    document.body.removeChild(link);
-}}>
-    <DownloadIcon />
-    <Typography>{translations.hero.downloadCV}</Typography>
-</StyledButton>
+                                    
+                                    {/* BOTÃO DE DOWNLOAD ATUALIZADO PARA GOOGLE DRIVE */}
+                                    <StyledButton onClick={() => {
+                                        // Seleciona o link baseado no idioma atual
+                                        const resumeUrl = lang === 'pt' 
+                                            ? "https://drive.google.com/file/d/14cLg7wnggh1V7uM9n3CcXd1PK-I9dwDH/view?usp=sharing" 
+                                            : "https://drive.google.com/file/d/1XSWARaNiE7fx94i1BO8dLFNL9QD4mOVL/view?usp=sharing";
+                                        
+                                        // Abre em uma nova aba
+                                        window.open(resumeUrl, "_blank");
+                                    }}>
+                                        <DownloadIcon />
+                                        <Typography>{translations.hero.downloadCV}</Typography>
+                                    </StyledButton>
+
                                 </Grid>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
                                     <StyledButton onClick={() => { window.location.href = "mailto:gabrielc0202@hotmail.com" }}>
@@ -95,10 +84,10 @@ const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
                                         <Typography>{translations.hero.contact}</Typography>
                                     </StyledButton>
                                 </Grid>
-                                    <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                        <StyledButton onClick={toggleLanguage}>
+                                <Grid item xs={12} md={4} display="flex" justifyContent="center">
+                                    <StyledButton onClick={toggleLanguage}>
                                         🌐 {lang === 'en' ? translations.hero.languageToggle.toPortuguese : translations.hero.languageToggle.toEnglish}
-                                        </StyledButton>
+                                    </StyledButton>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -210,9 +199,9 @@ const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
                 padding: theme.spacing(4, 0),
             }}>
                 <Projects translations={{
-    projectsTitle: translations.hero.projectsTitle,
-    viewOnGithub: translations.hero.viewOnGithub 
-}}/>
+                    projectsTitle: translations.hero.projectsTitle,
+                    viewOnGithub: translations.hero.viewOnGithub
+                }} />
             </div>
 
             <div style={{
@@ -224,4 +213,3 @@ const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
 };
 
 export default Hero;
-``
