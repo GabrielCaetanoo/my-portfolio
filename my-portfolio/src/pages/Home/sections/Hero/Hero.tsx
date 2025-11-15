@@ -66,15 +66,10 @@ const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
                             <StyledButton onClick={() => {
                                 const link = document.createElement("a");
-                                // Se o arquivo estiver na pasta 'public', o caminho é apenas a barra + nome do arquivo
-                                link.href = "/my-portfolio/src/public/CV - GABRIEL_CAETANO_br.pdf"; 
-    
-                                 // O nome que o arquivo terá quando for baixado no computador da pessoa
-                                link.download = "Gabriel_Caetano_CV.pdf"; 
-    
-                                document.body.appendChild(link); // É boa prática adicionar ao corpo antes de clicar
+                                // Isso garante que pegue o caminho certo seja local ou produção
+                                link.href = `${import.meta.env.BASE_URL}CV-GABRIEL_CAETANO_br.pdf`; 
+                                link.download = "Gabriel_Caetano_CV.pdf";
                                 link.click();
-                                document.body.removeChild(link); // Remove depois de clicar
                             }}>
                             <DownloadIcon />
                             <Typography>{translations.hero.downloadCV}</Typography>
