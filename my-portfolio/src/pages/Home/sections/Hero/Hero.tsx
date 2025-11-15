@@ -67,8 +67,8 @@ const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
                             <StyledButton onClick={() => {
                                 const link = document.createElement("a");
                                 // Isso garante que pegue o caminho certo seja local ou produção
-                                link.href = `${import.meta.env.BASE_URL}CV-GABRIEL_CAETANO_br.pdf`; 
-                                link.download = "Gabriel_Caetano_CV.pdf";
+                                link.href = `${import.meta.env.BASE_URL}CV.pdf`; 
+                                link.download = "CV.pdf";
                                 link.click();
                             }}>
                             <DownloadIcon />
