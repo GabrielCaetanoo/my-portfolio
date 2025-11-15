@@ -64,15 +64,21 @@ const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
                             </Typography>
                             <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                    <StyledButton onClick={() => {
-                                        const link = document.createElement("a");
-                                        link.href = "/my-portfolio/CV - GABRIEL_CAETANO_br.pdf";
-                                        link.download = "Gabriel_Caetano_CV.pdf";
-                                        link.click();
-                                    }}>
-                                        <DownloadIcon />
-                                        <Typography>{translations.hero.downloadCV}</Typography>
-                                    </StyledButton>
+                            <StyledButton onClick={() => {
+                                const link = document.createElement("a");
+                                // Se o arquivo estiver na pasta 'public', o caminho é apenas a barra + nome do arquivo
+                                link.href = "/CV - GABRIEL_CAETANO_br.pdf"; 
+    
+                                 // O nome que o arquivo terá quando for baixado no computador da pessoa
+                                link.download = "Gabriel_Caetano_CV.pdf"; 
+    
+                                document.body.appendChild(link); // É boa prática adicionar ao corpo antes de clicar
+                                link.click();
+                                document.body.removeChild(link); // Remove depois de clicar
+                            }}>
+                            <DownloadIcon />
+                            <Typography>{translations.hero.downloadCV}</Typography>
+                            </StyledButton>
                                 </Grid>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
                                     <StyledButton onClick={() => { window.location.href = "mailto:gabrielc0202@hotmail.com" }}>
