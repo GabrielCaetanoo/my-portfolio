@@ -64,16 +64,30 @@ const Hero = ({ aboutRef, skillsRef, projectsRef}: HeroProps) => {
                             </Typography>
                             <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                            <StyledButton onClick={() => {
-                                const link = document.createElement("a");
-                                // Isso garante que pegue o caminho certo seja local ou produção
-                                link.href = `${import.meta.env.BASE_URL}CV.pdf`; 
-                                link.download = "CV.pdf";
-                                link.click();
-                            }}>
-                            <DownloadIcon />
-                            <Typography>{translations.hero.downloadCV}</Typography>
-                            </StyledButton>
+<StyledButton onClick={() => {
+    // 1. Caminho direto (se está na pasta public, é só a barra)
+    const fileUrl = "/CV.pdf";
+    
+    // 2. Cria o elemento link
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    
+    // 3. Força o nome do arquivo no download
+    link.setAttribute("download", "Gabriel_Caetano_CV.pdf");
+    
+    // 4. IMPORTANTE: Adiciona ao corpo do documento (invisível)
+    // Isso é necessário para o Firefox e alguns navegadores funcionarem
+    document.body.appendChild(link);
+    
+    // 5. Simula o clique
+    link.click();
+    
+    // 6. Remove o link do documento para limpar
+    document.body.removeChild(link);
+}}>
+    <DownloadIcon />
+    <Typography>{translations.hero.downloadCV}</Typography>
+</StyledButton>
                                 </Grid>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
                                     <StyledButton onClick={() => { window.location.href = "mailto:gabrielc0202@hotmail.com" }}>
