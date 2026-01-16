@@ -67,8 +67,8 @@ const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
                                     <StyledButton onClick={() => {
                                         // Seleciona o link baseado no idioma atual
                                         const resumeUrl = lang === 'pt' 
-                                            ? "https://drive.google.com/file/d/14cLg7wnggh1V7uM9n3CcXd1PK-I9dwDH/view?usp=sharing" 
-                                            : "https://drive.google.com/file/d/1XSWARaNiE7fx94i1BO8dLFNL9QD4mOVL/view?usp=sharing";
+                                            ? "https://drive.google.com/file/d/1tlH3a-1RBL6hyIfHn-nQlBzlUgGYEGYn/view?usp=drive_link" 
+                                            : "https://drive.google.com/file/d/1gVqtR1GMMZI0TxvaD3IXUPYlCg5rrJI2/view?usp=drive_link";
                                         
                                         // Abre em uma nova aba
                                         window.open(resumeUrl, "_blank");
