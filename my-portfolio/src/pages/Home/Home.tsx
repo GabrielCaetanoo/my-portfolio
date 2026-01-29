@@ -22,8 +22,7 @@ const Home = () => {
     };
 
     const toggleLanguage = () => {
-        const newLang = lang === 'en' ? 'pt' : 'en';
-        setLang(newLang);
+        setLang((prev) => (prev === 'en' ? 'pt' : 'en'));
     };
 
     const translations = lang === 'en' ? translationsEN : translationsPT;
@@ -38,7 +37,7 @@ const Home = () => {
           onToggleLanguage={toggleLanguage} 
         />
         
-        {/* CORREÇÃO: Removido o toggleLanguage daqui pois o Hero não o usa mais */}
+        {/* CORREÇÃO: Removido o toggleLanguage daqui */}
         <Hero lang={lang} />
 
         <Box ref={aboutRef}>
