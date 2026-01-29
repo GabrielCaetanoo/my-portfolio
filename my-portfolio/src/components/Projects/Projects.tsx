@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react';
-import { fetchProjects } from '../../utils/api';
 import { Container, Typography, Box, Card, CardContent, CardActions, Button, Chip, Stack } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import LanguageIcon from '@mui/icons-material/Language'; // Para links de Demo
 
-interface Repository {
-    id: number;
+interface Project {
+    id: string;
     name: string;
     description: string;
-    html_url: string;
+    githubUrl?: string; // Opcional, já que são privados
+    demoUrl?: string;   // Link do site no ar
+    badge: string;
 }
 
 interface ProjectsProps {
@@ -17,137 +18,119 @@ interface ProjectsProps {
         projectsTitle: string;
         viewOnGithub: string;
         projects: {
+            sbr_title: string;
             sbr_desc: string;
+            salon_title: string;
             salon_desc: string;
+            uneagro_title: string;
             uneagro_desc: string;
         };
     };
 }
 
 const Projects = ({ translations }: ProjectsProps) => {
-    const [projects, setProjects] = useState<Repository[]>([]);
     const theme = useTheme();
 
-    useEffect(() => {
-        fetchProjects().then(data => setProjects(data));
-    }, []);
-
-    // Função para identificar e formatar os projetos em destaque
-    const getProjectDetails = (projectName: string, githubDesc: string) => {
-        const name = projectName.toLowerCase();
-        
-        if (name.includes('salon')) {
-            return {
-                description: translations.projects.salon_desc,
-                badge: "-30% Manual Ops"
-            };
+    // DEFINIÇÃO MANUAL DOS PROJETOS PRINCIPAIS
+    const featuredProjects: Project[] = [
+        {
+            id: 'sbr',
+            name: translations.projects.sbr_title,
+            description: translations.projects.sbr_desc,
+            demoUrl: "https://sbrimoveis.com.br", // Exemplo de link
+            badge: "+40% Perf. Search"
+        },
+        {
+            id: 'salon',
+            name: translations.projects.salon_title,
+            description: translations.projects.salon_desc,
+            badge: "-30% Manual Ops"
+        },
+        {
+            id: 'uneagro',
+            name: translations.projects.uneagro_title,
+            description: translations.projects.uneagro_desc,
+            badge: "Saved 5h/week"
         }
-        if (name.includes('sbr')) {
-            return {
-                description: translations.projects.sbr_desc,
-                badge: "+40% Perf. Search"
-            };
-        }
-        if (name.includes('uneagro')) {
-            return {
-                description: translations.projects.uneagro_desc,
-                badge: "Saved 5h/week"
-            };
-        }
-        
-        return {
-            description: githubDesc || "Project developed focusing on scalability and modern architectural patterns.",
-            badge: null
-        };
-    };
+    ];
 
     return (
-        <Container 
-            sx={{ 
-                py: 8,
-                display: 'flex', 
-                flexDirection: 'column', 
-                alignItems: 'center' 
-            }}
-        >
+        <Container sx={{ py: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Typography variant="h2" color="primary.contrastText" textAlign="center" gutterBottom sx={{ mb: 6 }}>
                 {translations.projectsTitle}
             </Typography>
 
-            {projects.length > 0 ? (
-                <Box sx={{ 
-                    display: 'grid', 
-                    gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' }, 
-                    gap: 4, 
-                    width: '100%' 
-                }}>
-                    {projects.map(project => {
-                        const { description, badge } = getProjectDetails(project.name, project.description);
-                        
-                        return (
-                            <Card key={project.id} sx={{ 
-                                backgroundColor: 'secondary.main', 
-                                color: 'text.primary',
-                                border: '1px solid rgba(100, 255, 218, 0.1)',
-                                transition: '0.3s',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'space-between',
-                                '&:hover': {
-                                    transform: 'translateY(-10px)',
-                                    borderColor: theme.palette.primary.contrastText,
-                                    boxShadow: `0 10px 30px -15px ${theme.palette.primary.contrastText}33`
-                                }
-                            }}>
-                                <CardContent>
-                                    <Stack direction="row" justifyContent="space-between" alignItems="flex-start" mb={2}>
-                                        <GitHubIcon sx={{ color: 'primary.contrastText', fontSize: '2rem' }} />
-                                        {badge && (
-                                            <Chip 
-                                                icon={<TrendingUpIcon style={{ color: '#0A192F', fontSize: '1rem' }} />} 
-                                                label={badge} 
-                                                sx={{ 
-                                                    backgroundColor: theme.palette.primary.contrastText, 
-                                                    color: '#0A192F', 
-                                                    fontWeight: 'bold',
-                                                    fontSize: '0.75rem'
-                                                }} 
-                                            />
-                                        )}
-                                    </Stack>
-                                    
-                                    <Typography variant="h5" sx={{ color: 'primary.contrastText', mb: 2, fontWeight: 600 }}>
-                                        {project.name}
-                                    </Typography>
-                                    
-                                    <Typography variant="body2" sx={{ color: 'text.secondary', minHeight: '80px', lineHeight: 1.6 }}>
-                                        {description}
-                                    </Typography>
-                                </CardContent>
+            <Box sx={{ 
+                display: 'grid', 
+                gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' }, 
+                gap: 4, 
+                width: '100%' 
+            }}>
+                {featuredProjects.map(project => (
+                    <Card key={project.id} sx={{ 
+                        backgroundColor: 'secondary.main', 
+                        color: 'text.primary',
+                        border: '1px solid rgba(100, 255, 218, 0.1)',
+                        transition: '0.3s',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        '&:hover': {
+                            transform: 'translateY(-10px)',
+                            borderColor: theme.palette.primary.contrastText,
+                            boxShadow: `0 10px 30px -15px ${theme.palette.primary.contrastText}33`
+                        }
+                    }}>
+                        <CardContent>
+                            <Stack direction="row" justifyContent="space-between" alignItems="flex-start" mb={2}>
+                                <GitHubIcon sx={{ color: 'primary.contrastText', opacity: project.githubUrl ? 1 : 0.3 }} />
+                                <Chip 
+                                    icon={<TrendingUpIcon style={{ color: '#0A192F', fontSize: '1rem' }} />} 
+                                    label={project.badge} 
+                                    sx={{ 
+                                        backgroundColor: theme.palette.primary.contrastText, 
+                                        color: '#0A192F', 
+                                        fontWeight: 'bold',
+                                        fontSize: '0.75rem'
+                                    }} 
+                                />
+                            </Stack>
+                            
+                            <Typography variant="h5" sx={{ color: 'primary.contrastText', mb: 2, fontWeight: 600 }}>
+                                {project.name}
+                            </Typography>
+                            
+                            <Typography variant="body2" sx={{ color: 'text.secondary', minHeight: '80px', lineHeight: 1.6 }}>
+                                {project.description}
+                            </Typography>
+                        </CardContent>
 
-                                <CardActions sx={{ p: 2 }}>
-                                    <Button 
-                                        size="small" 
-                                        variant="outlined"
-                                        href={project.html_url} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        sx={{ 
-                                            color: 'primary.contrastText', 
-                                            borderColor: 'primary.contrastText',
-                                            '&:hover': { backgroundColor: 'rgba(100, 255, 218, 0.1)', borderColor: 'primary.contrastText' }
-                                        }}
-                                    >
-                                        {translations.viewOnGithub}
-                                    </Button>
-                                </CardActions>
-                            </Card>
-                        );
-                    })}
-                </Box>
-            ) : (
-                <Typography color="text.secondary">Loading your engineering portfolio...</Typography>
-            )}
+                        <CardActions sx={{ p: 2, gap: 1 }}>
+                            {project.githubUrl && (
+                                <Button size="small" variant="outlined" href={project.githubUrl} target="_blank">
+                                    Code
+                                </Button>
+                            )}
+                            {project.demoUrl ? (
+                                <Button 
+                                    size="small" 
+                                    variant="contained" 
+                                    startIcon={<LanguageIcon />}
+                                    href={project.demoUrl} 
+                                    target="_blank"
+                                    sx={{ backgroundColor: 'primary.contrastText', color: '#0A192F', '&:hover': { opacity: 0.8 } }}
+                                >
+                                    Live Demo
+                                </Button>
+                            ) : (
+                                <Typography variant="caption" sx={{ color: 'text.disabled', fontStyle: 'italic' }}>
+                                    Private Enterprise Project
+                                </Typography>
+                            )}
+                        </CardActions>
+                    </Card>
+                ))}
+            </Box>
         </Container>
     );
 };
