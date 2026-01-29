@@ -7,6 +7,7 @@ import Experience from "../../components/Experience/Experience";
 import Skills from "../../components/Skills/Skills";
 import Projects from "../../components/Projects/Projects";
 import Footer from "../../components/Footer/Footer";
+// Importe centralizado para garantir sincronia entre os idiomas
 import translationsEN from '../../public/locales/en/translation.json';
 import translationsPT from '../../public/locales/pt/translation.json';
 import { Box } from "@mui/material";
@@ -17,6 +18,7 @@ const Home = () => {
     const projectsRef = useRef<HTMLDivElement>(null);
     const [lang, setLang] = useState('en');
 
+    // Força o scroll para o topo ao carregar ou atualizar a página
     useEffect(() => {
         window.history.scrollRestoration = 'manual';
         window.scrollTo(0, 0);
@@ -30,6 +32,7 @@ const Home = () => {
         setLang((prev) => (prev === 'en' ? 'pt' : 'en'));
     };
 
+    // Fonte única de verdade para as traduções
     const translations = lang === 'en' ? translationsEN : translationsPT;
 
     return (
@@ -47,15 +50,18 @@ const Home = () => {
           onToggleLanguage={toggleLanguage} 
         />
         
+        {/* Hero: Apresentação principal com foto e CTAs */}
         <Hero translations={translations.hero} lang={lang} />
 
         <Box ref={aboutRef}>
-            <ImpactMetrics /> 
-            {/* CORREÇÃO: Passando traduções para o Showcase */}
+            {/* CORREÇÃO: ImpactMetrics agora recebe as traduções de métricas */}
+            <ImpactMetrics translations={translations.metrics} /> 
+            
+            {/* AIShowcase: Detalhes da arquitetura RAG */}
             <AIShowcase translations={translations} />
         </Box>
 
-        {/* CORREÇÃO: Passando traduções para a Experiência */}
+        {/* Experience: Timeline da jornada profissional */}
         <Experience translations={translations} />
 
         <Box ref={skillsRef}>
