@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AppBar, MenuItem, Toolbar, styled, IconButton, Drawer, Box, useMediaQuery, useTheme } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close'; // Adicionado para melhor UX
 
 interface NavBarProps {
     onAboutClick: () => void;
@@ -24,6 +25,15 @@ const NavBar = ({ onAboutClick, onSkillsClick, onProjectsClick, onToggleLanguage
         setMobileOpen(!mobileOpen);
     };
 
+    // Função para traduzir e fechar o menu com um pequeno delay para feedback visual
+    const handleLanguageChange = () => {
+        onToggleLanguage();
+        // Não fechamos o drawer imediatamente para o usuário ver a troca do texto (ex: PT -> EN)
+        setTimeout(() => {
+            setMobileOpen(false);
+        }, 300);
+    };
+
     const StyledToolbar = styled(Toolbar)(({ theme }) => ({
         display: 'flex',
         justifyContent: isMobile ? 'flex-end' : 'center',
@@ -31,45 +41,58 @@ const NavBar = ({ onAboutClick, onSkillsClick, onProjectsClick, onToggleLanguage
     }));
 
     const NavMenuItem = styled(MenuItem)(({ theme }) => ({
-        fontSize: '1rem', // Aumentado levemente para melhor toque no mobile
-        letterSpacing: '1px',
+        fontSize: '1.2rem', 
+        letterSpacing: '2px',
         textTransform: 'uppercase',
-        fontWeight: 500,
+        fontWeight: 600,
         color: theme.palette.text.primary,
-        justifyContent: 'center', // Centraliza o texto dentro do item
+        justifyContent: 'center',
         width: '100%',
-        padding: theme.spacing(2, 0),
+        padding: theme.spacing(3, 0),
         '&:hover': { backgroundColor: 'transparent', color: theme.palette.primary.contrastText },
     }));
 
-    // Conteúdo do Menu Lateral (Drawer) com Alinhamento Centralizado
     const drawer = (
         <Box 
-            onClick={handleDrawerToggle} 
             sx={{ 
                 height: '100%', 
-                backgroundColor: 'rgba(10, 25, 47, 0.98)', // Levemente mais opaco para legibilidade
-                backdropFilter: 'blur(10px)',
+                backgroundColor: 'rgba(10, 25, 47, 0.98)', 
+                backdropFilter: 'blur(15px)',
                 display: 'flex', 
                 flexDirection: 'column', 
-                justifyContent: 'center', // Centraliza verticalmente
-                alignItems: 'center',     // Centraliza horizontalmente
-                gap: 2 
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative'
             }}
         >
-            <NavMenuItem onClick={onAboutClick}>{translations.About}</NavMenuItem>
-            <NavMenuItem onClick={onSkillsClick}>{translations.Skills}</NavMenuItem>
-            <NavMenuItem onClick={onProjectsClick}>{translations.Projects}</NavMenuItem>
+            {/* Botão para fechar o menu no topo direito */}
+            <IconButton 
+                onClick={handleDrawerToggle}
+                sx={{ position: 'absolute', top: 20, right: 20, color: 'primary.contrastText' }}
+            >
+                <CloseIcon sx={{ fontSize: '2.5rem' }} />
+            </IconButton>
+
+            <NavMenuItem onClick={() => { onAboutClick(); handleDrawerToggle(); }}>
+                {translations.About}
+            </NavMenuItem>
+            <NavMenuItem onClick={() => { onSkillsClick(); handleDrawerToggle(); }}>
+                {translations.Skills}
+            </NavMenuItem>
+            <NavMenuItem onClick={() => { onProjectsClick(); handleDrawerToggle(); }}>
+                {translations.Projects}
+            </NavMenuItem>
             
             <NavMenuItem 
-                onClick={onToggleLanguage}
+                onClick={handleLanguageChange}
                 sx={{ 
-                    border: '1px solid', 
+                    border: '2px solid', 
                     borderColor: 'primary.contrastText', 
-                    borderRadius: '4px', 
-                    maxWidth: '100px', // Botão de idioma com largura controlada
-                    mt: 4,
-                    py: 1
+                    borderRadius: '8px', 
+                    maxWidth: '120px',
+                    mt: 6,
+                    py: 1.5,
+                    color: 'primary.contrastText'
                 }}
             >
                 {translations.languageToggle}
@@ -92,7 +115,7 @@ const NavBar = ({ onAboutClick, onSkillsClick, onProjectsClick, onToggleLanguage
                 <StyledToolbar>
                     {isMobile ? (
                         <IconButton color="inherit" edge="start" onClick={handleDrawerToggle}>
-                            <MenuIcon sx={{ color: 'primary.contrastText', fontSize: '2.2rem' }} />
+                            <MenuIcon sx={{ color: 'primary.contrastText', fontSize: '2.5rem' }} />
                         </IconButton>
                     ) : (
                         <>
@@ -101,7 +124,7 @@ const NavBar = ({ onAboutClick, onSkillsClick, onProjectsClick, onToggleLanguage
                             <NavMenuItem onClick={onProjectsClick}>{translations.Projects}</NavMenuItem>
                             <NavMenuItem 
                                 onClick={onToggleLanguage}
-                                sx={{ border: '1px solid', borderColor: 'primary.contrastText', borderRadius: '4px', px: 1.5, ml: 4 }}
+                                sx={{ border: '1px solid', borderColor: 'primary.contrastText', borderRadius: '4px', px: 2, ml: 4 }}
                             >
                                 {translations.languageToggle}
                             </NavMenuItem>
@@ -119,8 +142,9 @@ const NavBar = ({ onAboutClick, onSkillsClick, onProjectsClick, onToggleLanguage
                 sx={{ 
                     '& .MuiDrawer-paper': { 
                         boxSizing: 'border-box', 
-                        width: '100%', // Agora ocupa a tela toda no mobile para um look moderno
-                        backgroundColor: 'transparent' 
+                        width: '100%', 
+                        backgroundColor: 'transparent',
+                        backgroundImage: 'none'
                     } 
                 }}
             >
