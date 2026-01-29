@@ -5,29 +5,44 @@ import CodeIcon from '@mui/icons-material/Code';
 import SchoolIcon from '@mui/icons-material/School';
 import theme from "../../theme";
 
-const Experience = () => {
+interface ExperienceProps {
+    translations: {
+        experience: {
+            title: string;
+            edu: string;
+            eduDesc: string;
+            dev: string;
+            devDesc: string;
+            fin: string;
+            finDesc: string;
+        }
+    };
+}
+
+const Experience = ({ translations }: ExperienceProps) => {
+    // Mapeamento dos ícones e cores mantendo a lógica de tradução do JSON
     const experiences = [
         {
-            period: "2024 - Presente",
-            title: "Engenharia de Software",
+            period: "2024 - 2026",
+            title: translations.experience.edu,
             company: "UniCesumar",
-            desc: "Foco em arquitetura de sistemas, algoritmos e desenvolvimento full-stack.",
+            desc: translations.experience.eduDesc,
             icon: <SchoolIcon />,
             color: theme.palette.primary.contrastText
         },
         {
             period: "2025 - 2026",
-            title: "Full Stack Developer (Freelance)",
+            title: translations.experience.dev,
             company: "Salon App / SBR Imóveis",
-            desc: "Desenvolvimento de soluções com IA (RAG) e otimização de performance em 40%.",
+            desc: translations.experience.devDesc,
             icon: <CodeIcon />,
             color: "#64FFDA"
         },
         {
-            period: "Atualmente",
-            title: "Assistente Financeiro",
+            period: "2022 - 2025",
+            title: translations.experience.fin,
             company: "Construtora Planespaço",
-            desc: "Visão analítica e gestão de processos, garantindo precisão em regras de negócio.",
+            desc: translations.experience.finDesc,
             icon: <BusinessCenterIcon />,
             color: "#8892B0"
         }
@@ -36,8 +51,9 @@ const Experience = () => {
     return (
         <Box sx={{ py: 15, backgroundColor: "background.default" }}>
             <Container maxWidth="md">
+                {/* Título traduzido: "Professional Journey" ou "Jornada Profissional" */}
                 <Typography variant="h2" textAlign="center" gutterBottom sx={{ color: 'primary.contrastText', mb: 8 }}>
-                    Professional Journey
+                    {translations.experience.title}
                 </Typography>
                 
                 <Timeline position="alternate">

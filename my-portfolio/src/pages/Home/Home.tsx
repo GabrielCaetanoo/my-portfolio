@@ -7,7 +7,6 @@ import Experience from "../../components/Experience/Experience";
 import Skills from "../../components/Skills/Skills";
 import Projects from "../../components/Projects/Projects";
 import Footer from "../../components/Footer/Footer";
-// Importe centralizado para garantir sincronia
 import translationsEN from '../../public/locales/en/translation.json';
 import translationsPT from '../../public/locales/pt/translation.json';
 import { Box } from "@mui/material";
@@ -48,15 +47,16 @@ const Home = () => {
           onToggleLanguage={toggleLanguage} 
         />
         
-        {/* Passamos o objeto 'hero' completo para o Hero */}
         <Hero translations={translations.hero} lang={lang} />
 
         <Box ref={aboutRef}>
             <ImpactMetrics /> 
-            <AIShowcase />
+            {/* CORREÇÃO: Passando traduções para o Showcase */}
+            <AIShowcase translations={translations} />
         </Box>
 
-        <Experience />
+        {/* CORREÇÃO: Passando traduções para a Experiência */}
+        <Experience translations={translations} />
 
         <Box ref={skillsRef}>
             <Skills 
