@@ -27,18 +27,19 @@ interface HeroProps {
 const Hero = ({ translations, lang }: HeroProps) => {
     return (
         <Box sx={{ 
-            backgroundColor: "background.default", 
+            // APLICADO: Gradiente radial para criar profundidade e efeito de vinheta
+            background: `radial-gradient(circle at 50% 50%, rgba(10, 25, 47, 0) 0%, rgba(10, 25, 47, 1) 100%), #0A192F`,
             color: "text.primary",
             height: "100vh", 
             display: "flex", 
             alignItems: "center", 
             position: 'relative', 
-            overflow: 'hidden' // Garante que as partículas não criem scroll
+            overflow: 'hidden' 
         }}>
-            {/* CAMADA 0: Fundo Animado de Partículas */}
+            {/* CAMADA 0: Fundo Animado */}
             <AnimatedBackground />
 
-            {/* CAMADA 1: Conteúdo Principal (zIndex garante que fique na frente) */}
+            {/* CAMADA 1: Conteúdo Principal */}
             <Container maxWidth="lg" sx={{ zIndex: 1, position: 'relative' }}>
                 <Grid container spacing={4} alignItems="center">
                     <Grid item xs={12} md={5} textAlign="center">
