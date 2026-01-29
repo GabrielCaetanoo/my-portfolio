@@ -5,10 +5,10 @@ import EmailIcon from '@mui/icons-material/Email';
 import { AnimatedBackground } from '../../../../components/StyledButton/AnimatedBackground/AnimatedBackground';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import theme from "../../../../theme";
-import { RefObject, useState, useEffect } from "react";
+import { RefObject, useState } from "react"; // Removido useEffect que não estava sendo usado
 import Projects from '../../../../components/Projects/Projects';
 import i18n from '../../../../../src/public/i18n';
-import React from 'react';
+// Removido import React from 'react' pois o Vite já gerencia isso
 import translationsEN from '../../../../../src/public/locales/en/translation.json';
 import translationsPT from '../../../../../src/public/locales/pt/translation.json';
 
@@ -16,12 +16,15 @@ interface HeroProps {
     aboutRef: RefObject<HTMLDivElement>;
     skillsRef: RefObject<HTMLDivElement>;
     projectsRef: RefObject<HTMLDivElement>;
+    // Adicionado estas duas para bater com o que o seu Home.tsx está enviando
+    toggleLanguage?: () => void; 
+    lang?: string;
 }
 
 const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
     const [lang, setLang] = useState(i18n.language || 'pt');
 
-    const toggleLanguage = () => {
+    const handleToggleLanguage = () => {
         const newLang = lang === 'en' ? 'pt' : 'en';
         i18n.changeLanguage(newLang).then(() => {
             setLang(newLang);
@@ -32,7 +35,6 @@ const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
 
     return (
         <Box sx={{ backgroundColor: "background.default", color: "text.primary" }}>
-            {/* HERO SECTION */}
             <Box sx={{ 
                 height: "100vh", 
                 display: "flex", 
@@ -64,7 +66,6 @@ const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
                                 {translations.hero.name}
                             </Typography>
                             <Typography variant="h2" sx={{ mb: 4, fontSize: { xs: '1.5rem', md: '2.2rem' } }}>
-                                {/* Aqui deve estar: Full Stack Developer | AI & LLM Specialist */}
                                 {translations.hero.title}
                             </Typography>
                             
@@ -87,7 +88,7 @@ const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
                                     </StyledButton>
                                 </Grid>
                                 <Grid item>
-                                    <StyledButton onClick={toggleLanguage}>
+                                    <StyledButton onClick={handleToggleLanguage}>
                                         🌐 {lang === 'en' ? "Português" : "English"}
                                     </StyledButton>
                                 </Grid>
@@ -97,7 +98,6 @@ const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
                 </Container>
             </Box>
 
-            {/* ABOUT SECTION */}
             <Box ref={aboutRef} sx={{ py: 15, backgroundColor: "secondary.main" }}>
                 <Container maxWidth="md">
                     <Typography variant="h2" textAlign="center" gutterBottom sx={{ color: 'primary.contrastText' }}>
@@ -113,7 +113,6 @@ const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
                 </Container>
             </Box>
 
-            {/* SKILLS SECTION - ATUALIZADA */}
             <Box ref={skillsRef} sx={{ py: 15 }}>
                 <Container maxWidth="lg">
                     <Typography variant="h2" textAlign="center" gutterBottom sx={{ color: 'primary.contrastText' }}>
@@ -144,7 +143,6 @@ const Hero = ({ aboutRef, skillsRef, projectsRef }: HeroProps) => {
 
             <Divider sx={{ borderColor: 'rgba(100, 255, 218, 0.1)' }} />
 
-            {/* PROJECTS SECTION */}
             <Box ref={projectsRef} sx={{ py: 10 }}>
                 <Projects translations={{
                     projectsTitle: translations.hero.projectsTitle,
