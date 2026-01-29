@@ -9,11 +9,10 @@ import translationsEN from '../../../../../src/public/locales/en/translation.jso
 import translationsPT from '../../../../../src/public/locales/pt/translation.json';
 
 interface HeroProps {
-    toggleLanguage: () => void; 
     lang: string;
 }
 
-const Hero = ({ toggleLanguage, lang }: HeroProps) => {
+const Hero = ({ lang }: HeroProps) => {
     const translations = lang === 'en' ? translationsEN : translationsPT;
 
     return (
@@ -69,11 +68,6 @@ const Hero = ({ toggleLanguage, lang }: HeroProps) => {
                                 <StyledButton onClick={() => window.location.href = "mailto:gabrielc0202@hotmail.com"}>
                                     <EmailIcon sx={{ mr: 1 }} />
                                     {translations.hero.contact}
-                                </StyledButton>
-                            </Grid>
-                            <Grid item>
-                                <StyledButton onClick={toggleLanguage}>
-                                    🌐 {lang === 'en' ? "PT" : "EN"}
                                 </StyledButton>
                             </Grid>
                         </Grid>

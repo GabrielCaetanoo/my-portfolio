@@ -15,7 +15,6 @@ const Home = () => {
     const aboutRef = useRef<HTMLDivElement>(null);
     const skillsRef = useRef<HTMLDivElement>(null);
     const projectsRef = useRef<HTMLDivElement>(null);
-
     const [lang, setLang] = useState('en');
 
     const handleScrollTo = (ref: React.RefObject<HTMLDivElement>) => {
@@ -39,22 +38,16 @@ const Home = () => {
           onToggleLanguage={toggleLanguage} 
         />
         
-        {/* 1. HERO - Apresentação principal */}
-        <Hero 
-          toggleLanguage={toggleLanguage} 
-          lang={lang} 
-        />
+        {/* CORREÇÃO: Removido o toggleLanguage daqui pois o Hero não o usa mais */}
+        <Hero lang={lang} />
 
-        {/* 2. ABOUT & AI - Impacto técnico */}
         <Box ref={aboutRef}>
             <ImpactMetrics /> 
             <AIShowcase />
         </Box>
 
-        {/* 3. EXPERIENCE - Jornada Profissional */}
         <Experience />
 
-        {/* 4. SKILLS - Tecnologias e Stack */}
         <Box ref={skillsRef}>
             <Skills 
                 title={lang === 'en' ? "Tech Stack" : "Tecnologias"} 
@@ -64,7 +57,6 @@ const Home = () => {
             />
         </Box>
 
-        {/* 5. PROJECTS - Vitrine final */}
         <Box ref={projectsRef} sx={{ pb: 10 }}>
             <Projects translations={{
                 projectsTitle: lang === 'en' ? "Featured Projects" : "Projetos em Destaque",
