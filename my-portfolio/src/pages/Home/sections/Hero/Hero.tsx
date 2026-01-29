@@ -6,7 +6,6 @@ import { AnimatedBackground } from '../../../../components/StyledButton/Animated
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import theme from "../../../../theme";
 
-// Interface rigorosa para eliminar o erro de 'any' e garantir tipos fortes
 interface HeroTranslations {
     name: string;
     title: string;
@@ -34,10 +33,13 @@ const Hero = ({ translations, lang }: HeroProps) => {
             display: "flex", 
             alignItems: "center", 
             position: 'relative', 
-            overflow: 'hidden' 
+            overflow: 'hidden' // Garante que as partículas não criem scroll
         }}>
+            {/* CAMADA 0: Fundo Animado de Partículas */}
             <AnimatedBackground />
-            <Container maxWidth="lg" sx={{ zIndex: 1 }}>
+
+            {/* CAMADA 1: Conteúdo Principal (zIndex garante que fique na frente) */}
+            <Container maxWidth="lg" sx={{ zIndex: 1, position: 'relative' }}>
                 <Grid container spacing={4} alignItems="center">
                     <Grid item xs={12} md={5} textAlign="center">
                         <Box sx={{ position: "relative", display: 'inline-block' }}>

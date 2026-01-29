@@ -14,7 +14,6 @@ const AIShowcase = ({ translations }: AIShowcaseProps) => {
     return (
         <Box sx={{ py: { xs: 8, md: 15 }, backgroundColor: "secondary.main" }}>
             <Container maxWidth="lg">
-                {/* TRADUÇÃO AQUI: Título dinâmico vindo do JSON */}
                 <Typography variant="h2" textAlign="center" sx={{ color: 'primary.contrastText', mb: 4 }}>
                     {translations.ai_showcase.title}
                 </Typography>
