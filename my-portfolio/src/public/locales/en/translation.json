@@ -1,30 +1,20 @@
 {
-    "hero": {
-        "navBarAbout": "About Me",
-        "navBarSkills": "Skills",
-        "navBarProjects": "Projects",
-        "name": "Gabriel Caetano",
-        "title": "Software Engineer",
-        "downloadCV": "Download CV",
-        "contact": "Contact",
-        "aboutMe": "About Me",
-        "introduction": "Hello! I'm Gabriel Caetano, a developer focused on Front-End and a Software Engineering student. I'm always looking to improve my skills and learn new technologies. Currently, I have experience in TypeScript, React, and C++, in addition to developing my own projects to expand my knowledge.",
-        "projects": "Some of my projects include a MIPS simulation application and a medication dosage control system, where I could apply concepts of algorithms and simulation. My dream is to one day start my own company or reach the position of Tech Lead, with the freedom to work from anywhere in the world.",
-        "mySkills": "My Skills",
-        "skillsIntro": "Technologies and languages I use in project development.",
-        "linkedin": "LinkedIn",
-        "github": "GitHub",
-        "projectsTitle": "Projects",
-        "viewOnGithub": "View on GitHub",
-        "languageToggle": {
-            "toPortuguese": "Português",
-            "toEnglish": "English"
-
-        }
-    },    
-    "navbar": {
-        "About": "About Me",
-        "Skills": "Skills",
-        "Projects": "Projects"
+  "hero": {
+    "name": "Gabriel Caetano",
+    "title": "Full Stack Developer | AI & LLM Specialist",
+    "downloadCV": "Download CV",
+    "contact": "Contact",
+    "aboutMe": "About Me",
+    "introduction": "Software Engineering student at UniCesumar with a strong analytical background from the finance sector. I focus on building scalable full-stack applications, merging the efficiency of the JavaScript ecosystem (React, Node.js, TypeScript) with the innovation of Artificial Intelligence (RAG/LLMs). I strive to turn technical challenges into solutions that deliver real-world impact.",
+    "mySkills": "My Skills",
+    "skillsIntro": "Technologies I use to build modern, high-performance digital products.",
+    "projectsTitle": "Featured Projects",
+    "viewOnGithub": "View on GitHub",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "languageToggle": {
+      "toEnglish": "English",
+      "toPortuguese": "Português"
     }
+  }
 }
