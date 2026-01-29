@@ -49,6 +49,7 @@ const Projects = ({ translations }: ProjectsProps) => {
         {
             id: 'uneagro',
             name: translations.projects.uneagro_title,
+            demoUrl: "https://www.uneagromga.com.br",
             description: translations.projects.uneagro_desc,
             badge: "Saved 5h/week"
         }
