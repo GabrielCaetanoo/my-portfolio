@@ -4,50 +4,49 @@
     "title": "Full Stack Developer | Especialista em IA & RAG",
     "downloadCV": "Baixar CV",
     "contact": "Contato",
-    "aboutMe": "Sobre Mim",
+    "aboutMe": "Sobre",
     "introduction": "Estudante de Engenharia de Software na UniCesumar com sólida base analítica vinda do setor financeiro. Foco na criação de aplicações full-stack escaláveis, unindo a eficiência do ecossistema JavaScript (React, Node.js, TypeScript) com a inovação de Inteligência Artificial (RAG/LLMs). Busco transformar desafios técnicos em soluções que gerem impacto real.",
-    "mySkills": "Minhas Habilidades",
-    "skillsIntro": "Tecnologias que utilizo para construir produtos digitais modernos e performáticos.",
+    "mySkills": "Stack Tecnológica",
     "projectsTitle": "Projetos em Destaque",
     "viewOnGithub": "Ver no GitHub",
-    "linkedin": "LinkedIn",
-    "github": "GitHub",
-    "languageToggle": {
-      "toEnglish": "English",
-      "toPortuguese": "Português"
-    },
-    "About": "Sobre",
-    "Skills": "Habilidades",
-    "Projects": "Projetos"
+    "languageToggle": "EN"
   },
   "metrics": {
     "title": "Impacto & Resultados",
     "perf": "Aumento de Performance",
-    "perfDesc": "Otimização de busca e filtros na plataforma SBR Imóveis.",
+    "perfDesc": "Otimização de 40% na busca e filtros da plataforma SBR Imóveis.",
     "auto": "Automação de Processos",
-    "autoDesc": "Redução de operações manuais no Salon App via integração de IA.",
+    "autoDesc": "Redução de 30% nas operações manuais no Salon App via integração de IA.",
     "time": "Tempo Economizado",
-    "timeDesc": "Economia de tempo administrativo no portal Uneagro."
+    "timeDesc": "Economia de 5h semanais em tarefas administrativas no portal Uneagro."
   },
   "ai_showcase": {
     "title": "Arquitetura de IA: Especialista em RAG",
-    "subtitle": "Não apenas prompts. Eu construo a infraestrutura que torna a IA precisa e integrada ao negócio.",
-    "step1": "Ingestão de Dados",
+    "subtitle": "Não apenas prompts. Eu construo a infraestrutura que torna a IA precisa, segura e integrada ao negócio.",
+    "step1": "Data Ingestion",
     "step1Desc": "Extração e limpeza de dados brutos (agendamentos e preferências).",
     "step2": "Vector Embeddings",
-    "step2Desc": "Conversão de texto em vetores para busca semântica.",
-    "step3": "Recuperação RAG",
-    "step3Desc": "Recuperação de contexto em tempo real para o prompt.",
-    "step4": "Resposta da IA",
-    "step4Desc": "Geração de respostas precisas e personalizadas."
+    "step2Desc": "Conversão de texto em vetores para busca semântica em Vector DBs.",
+    "step3": "RAG Retrieval",
+    "step3Desc": "Recuperação de contexto em tempo real para alimentar o prompt da LLM.",
+    "step4": "AI Response",
+    "step4Desc": "Geração de respostas precisas e personalizadas para o usuário."
   },
   "experience": {
     "title": "Jornada Profissional",
     "edu": "Engenharia de Software",
     "eduDesc": "Foco em arquitetura de sistemas e desenvolvimento full-stack na UniCesumar.",
     "dev": "Full Stack Developer (Freelance)",
-    "devDesc": "Desenvolvimento de soluções com IA e otimização de performance.",
+    "devDesc": "Desenvolvimento de soluções com IA e otimização de performance para clientes reais.",
     "fin": "Assistente Financeiro",
     "finDesc": "Visão analítica e gestão de processos na Construtora Planespaço."
+  },
+  "projects": {
+    "sbr_title": "SBR Imóveis",
+    "sbr_desc": "Plataforma imobiliária de alta performance com algoritmos de busca otimizados (ganho de 40% em velocidade).",
+    "salon_title": "Salon App (AI)",
+    "salon_desc": "Sistema inteligente com RAG para automação de agendamentos, reduzindo 30% da carga operacional.",
+    "uneagro_title": "Portal Uneagro",
+    "uneagro_desc": "Gestão administrativa e mapeamento agrícola com foco em produtividade (5h economizadas/semana)."
   }
 }

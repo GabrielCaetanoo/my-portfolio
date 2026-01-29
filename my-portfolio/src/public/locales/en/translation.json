@@ -4,50 +4,49 @@
     "title": "Full Stack Developer | AI & LLM Specialist",
     "downloadCV": "Download CV",
     "contact": "Contact",
-    "aboutMe": "About Me",
+    "aboutMe": "About",
     "introduction": "Software Engineering student at UniCesumar with a strong analytical background from the finance sector. I focus on building scalable full-stack applications, merging the efficiency of the JavaScript ecosystem (React, Node.js, TypeScript) with the innovation of Artificial Intelligence (RAG/LLMs). I strive to turn technical challenges into solutions that deliver real-world impact.",
-    "mySkills": "My Skills",
-    "skillsIntro": "Technologies I use to build modern, high-performance digital products.",
+    "mySkills": "Tech Stack",
     "projectsTitle": "Featured Projects",
     "viewOnGithub": "View on GitHub",
-    "linkedin": "LinkedIn",
-    "github": "GitHub",
-    "languageToggle": {
-      "toEnglish": "English",
-      "toPortuguese": "Português"
-    },
-    "About": "About",
-    "Skills": "Skills",
-    "Projects": "Projects"
+    "languageToggle": "PT"
   },
   "metrics": {
     "title": "Impact & Results",
     "perf": "Performance Boost",
-    "perfDesc": "Search and filter optimization on the SBR Imóveis platform.",
+    "perfDesc": "40% optimization in search and filtering on the SBR Imóveis platform.",
     "auto": "Process Automation",
-    "autoDesc": "Reduction of manual operations in the Salon App via AI integration.",
+    "autoDesc": "30% reduction in manual operations in the Salon App via AI integration.",
     "time": "Time Saved",
-    "timeDesc": "Administrative time savings on the Uneagro portal."
+    "timeDesc": "5 hours of administrative time saved weekly on the Uneagro portal."
   },
   "ai_showcase": {
     "title": "AI Architecture: RAG Specialist",
-    "subtitle": "Not just prompts. I build the infrastructure that makes AI accurate and business-integrated.",
+    "subtitle": "Beyond prompts. I build the infrastructure that makes AI accurate, secure, and business-ready.",
     "step1": "Data Ingestion",
     "step1Desc": "Extraction and cleaning of raw data (schedules and preferences).",
     "step2": "Vector Embeddings",
-    "step2Desc": "Conversion of text into vectors for semantic search.",
+    "step2Desc": "Converting text into vectors for semantic search in Vector DBs.",
     "step3": "RAG Retrieval",
-    "step3Desc": "Real-time context retrieval for the prompt.",
+    "step3Desc": "Real-time context retrieval to power the LLM prompt.",
     "step4": "AI Response",
-    "step4Desc": "Generation of accurate and personalized responses."
+    "step4Desc": "Generation of accurate and personalized responses for the end user."
   },
   "experience": {
     "title": "Professional Journey",
     "edu": "Software Engineering",
     "eduDesc": "Focus on system architecture and full-stack development at UniCesumar.",
     "dev": "Full Stack Developer (Freelance)",
-    "devDesc": "Developing AI solutions and performance optimization.",
+    "devDesc": "Developing AI solutions and high-performance applications for real-world clients.",
     "fin": "Financial Assistant",
-    "finDesc": "Analytical vision and process management at Construtora Planespaço."
+    "finDesc": "Analytical mindset and process management at Construtora Planespaço."
+  },
+  "projects": {
+    "sbr_title": "SBR Imóveis",
+    "sbr_desc": "High-performance real estate platform with optimized search algorithms (40% speed gain).",
+    "salon_title": "Salon App (AI)",
+    "salon_desc": "Smart RAG-integrated system for automated scheduling, reducing 30% of operational workload.",
+    "uneagro_title": "Uneagro Portal",
+    "uneagro_desc": "Administrative management and agricultural mapping focused on productivity (5h saved/week)."
   }
 }
