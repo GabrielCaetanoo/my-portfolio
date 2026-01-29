@@ -1,40 +1,31 @@
-import { Box, Container, Typography, Grid, Paper, Stack } from "@mui/material";
-// motion removido pois o ESLint acusou que não estava sendo usado
-import SmartToyIcon from '@mui/icons-material/SmartToy';
-import StorageIcon from '@mui/icons-material/Storage';
-import PsychologyIcon from '@mui/icons-material/Psychology';
-import SchemaIcon from '@mui/icons-material/Schema';
-import RAGDiagram from '../../assets/images/rag-diagram.png'; // Verifique se o arquivo existe nesta pasta
+import { Box, Container, Typography } from "@mui/material";
+// Importando apenas o que é usado para limpar os erros do console
+import RAGDiagram from '../../assets/images/rag-diagram.png'; 
 
 const AIShowcase = () => {
-    const steps = [
-        { title: "Data Ingestion", desc: "Extração de dados brutos.", icon: <StorageIcon />, color: "#64FFDA" },
-        { title: "Vector Embeddings", desc: "Busca semântica em Vector DBs.", icon: <SchemaIcon />, color: "#64FFDA" },
-        { title: "RAG Retrieval", desc: "Recuperação de contexto para LLM.", icon: <PsychologyIcon />, color: "#64FFDA" },
-        { title: "AI Response", desc: "Geração de respostas precisas.", icon: <SmartToyIcon />, color: "#64FFDA" }
-    ];
-
     return (
-        <Box sx={{ py: 15, backgroundColor: "secondary.main" }}>
+        <Box sx={{ py: { xs: 8, md: 15 }, backgroundColor: "secondary.main" }}>
             <Container maxWidth="lg">
-                <Typography variant="h2" textAlign="center" sx={{ color: 'primary.contrastText', mb: 8 }}>
+                <Typography variant="h2" textAlign="center" sx={{ color: 'primary.contrastText', mb: 4 }}>
                     AI Architecture: RAG Specialist
                 </Typography>
-                <Grid container spacing={4}>
-                    {steps.map((step, index) => (
-                        <Grid item xs={12} sm={6} md={3} key={index}>
-                            <Paper sx={{ p: 3, height: '100%', backgroundColor: 'primary.main', borderLeft: `4px solid ${step.color}` }}>
-                                <Stack spacing={2}>
-                                    <Box sx={{ color: step.color }}>{step.icon}</Box>
-                                    <Typography variant="h5" sx={{ fontWeight: 600 }}>{step.title}</Typography>
-                                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>{step.desc}</Typography>
-                                </Stack>
-                            </Paper>
-                        </Grid>
-                    ))}
-                </Grid>
-                <Box sx={{ mt: 10, textAlign: 'center' }}>
-                    <Box component="img" src={RAGDiagram} sx={{ maxWidth: '100%', borderRadius: 3 }} />
+                
+                <Typography variant="body1" textAlign="center" sx={{ color: 'text.secondary', mb: 8, maxWidth: '800px', mx: 'auto' }}>
+                    Arquitetura implementada para automação de processos, utilizando bancos de vetores para recuperação de contexto em tempo real.
+                </Typography>
+
+                <Box sx={{ textAlign: 'center' }}>
+                    <Box 
+                        component="img" 
+                        src={RAGDiagram} 
+                        alt="RAG Architecture Diagram"
+                        sx={{ 
+                            maxWidth: '100%', 
+                            borderRadius: 3, 
+                            border: '1px solid rgba(100,255,218,0.1)',
+                            boxShadow: '0 20px 40px rgba(0,0,0,0.3)'
+                        }} 
+                    />
                 </Box>
             </Container>
         </Box>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"; // useEffect adicionado
+import { useEffect, useRef, useState } from "react";
 import Hero from "./sections/Hero/Hero";
 import NavBar from "../../components/StyledButton/NavBar/NavBar";
 import ImpactMetrics from "../../components/ImpactMetrics/ImpactMetrics";
@@ -7,21 +7,21 @@ import Experience from "../../components/Experience/Experience";
 import Skills from "../../components/Skills/Skills";
 import Projects from "../../components/Projects/Projects";
 import Footer from "../../components/Footer/Footer";
+// Importe centralizado para garantir sincronia
 import translationsEN from '../../public/locales/en/translation.json';
 import translationsPT from '../../public/locales/pt/translation.json';
 import { Box } from "@mui/material";
 
 const Home = () => {
-    // RESET DE SCROLL NO F5
-    useEffect(() => {
-        window.history.scrollRestoration = 'manual';
-        window.scrollTo(0, 0);
-    }, []);
-
     const aboutRef = useRef<HTMLDivElement>(null);
     const skillsRef = useRef<HTMLDivElement>(null);
     const projectsRef = useRef<HTMLDivElement>(null);
     const [lang, setLang] = useState('en');
+
+    useEffect(() => {
+        window.history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+    }, []);
 
     const handleScrollTo = (ref: React.RefObject<HTMLDivElement>) => {
         ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -48,7 +48,8 @@ const Home = () => {
           onToggleLanguage={toggleLanguage} 
         />
         
-        <Hero lang={lang} />
+        {/* Passamos o objeto 'hero' completo para o Hero */}
+        <Hero translations={translations.hero} lang={lang} />
 
         <Box ref={aboutRef}>
             <ImpactMetrics /> 
