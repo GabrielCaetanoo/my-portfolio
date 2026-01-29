@@ -1,18 +1,17 @@
 import { Box, Container, Typography, Grid, Paper, Stack } from "@mui/material";
-// 'motion' removido por não estar sendo usado
+// motion removido pois o ESLint acusou que não estava sendo usado
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import StorageIcon from '@mui/icons-material/Storage';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import SchemaIcon from '@mui/icons-material/Schema';
-// CAMINHO CORRIGIDO: Removido um '../' para localizar a imagem corretamente
-import RAGDiagram from '../../assets/images/rag-diagram.png'; 
+import RAGDiagram from '../../assets/images/rag-diagram.png'; // Verifique se o arquivo existe nesta pasta
 
 const AIShowcase = () => {
     const steps = [
-        { title: "Data Ingestion", desc: "Extração e limpeza de dados brutos.", icon: <StorageIcon />, color: "#64FFDA" },
-        { title: "Vector Embeddings", desc: "Conversão de texto em vetores para busca semântica.", icon: <SchemaIcon />, color: "#64FFDA" },
-        { title: "RAG Retrieval", desc: "Recuperação de contexto em tempo real para a LLM.", icon: <PsychologyIcon />, color: "#64FFDA" },
-        { title: "AI Response", desc: "Geração de respostas precisas e personalizadas.", icon: <SmartToyIcon />, color: "#64FFDA" }
+        { title: "Data Ingestion", desc: "Extração de dados brutos.", icon: <StorageIcon />, color: "#64FFDA" },
+        { title: "Vector Embeddings", desc: "Busca semântica em Vector DBs.", icon: <SchemaIcon />, color: "#64FFDA" },
+        { title: "RAG Retrieval", desc: "Recuperação de contexto para LLM.", icon: <PsychologyIcon />, color: "#64FFDA" },
+        { title: "AI Response", desc: "Geração de respostas precisas.", icon: <SmartToyIcon />, color: "#64FFDA" }
     ];
 
     return (
@@ -35,10 +34,7 @@ const AIShowcase = () => {
                     ))}
                 </Grid>
                 <Box sx={{ mt: 10, textAlign: 'center' }}>
-                    <Box component="img" src={RAGDiagram} sx={{ maxWidth: '100%', borderRadius: 3, border: '1px solid rgba(100,255,218,0.1)' }} />
-                    <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', mt: 3 }}>
-                        Arquitetura de RAG implementada no Salon App para automação de 30% das operações.
-                    </Typography>
+                    <Box component="img" src={RAGDiagram} sx={{ maxWidth: '100%', borderRadius: 3 }} />
                 </Box>
             </Container>
         </Box>

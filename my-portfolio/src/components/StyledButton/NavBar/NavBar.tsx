@@ -1,4 +1,4 @@
-import { AppBar, MenuItem, Toolbar, styled } from "@mui/material"; // Box e Typography removidos
+import { AppBar, MenuItem, Toolbar, styled } from "@mui/material"; // Typography removido
 
 interface NavBarProps {
     onAboutClick: () => void;
@@ -39,30 +39,14 @@ const NavBar = ({ onAboutClick, onSkillsClick, onProjectsClick, onToggleLanguage
     }));
 
     return (
-        <AppBar 
-            position="fixed" 
-            sx={{ 
-                backgroundColor: 'rgba(10, 25, 47, 0.8)', 
-                backdropFilter: 'blur(12px)', 
-                boxShadow: 'none',
-                borderBottom: '1px solid rgba(100, 255, 218, 0.1)',
-                top: 0,
-            }}
-        >
+        <AppBar position="fixed" sx={{ backgroundColor: 'rgba(10, 25, 47, 0.8)', backdropFilter: 'blur(12px)', boxShadow: 'none' }}>
             <StyledToolbar>
                 <NavMenuItem onClick={onAboutClick}>{translations.About}</NavMenuItem>
                 <NavMenuItem onClick={onSkillsClick}>{translations.Skills}</NavMenuItem>
                 <NavMenuItem onClick={onProjectsClick}>{translations.Projects}</NavMenuItem>
-                
                 <NavMenuItem 
                     onClick={onToggleLanguage}
-                    sx={{ 
-                        border: '1px solid', 
-                        borderColor: 'primary.contrastText',
-                        borderRadius: '4px',
-                        px: 1.5,
-                        ml: { md: 4 }
-                    }}
+                    sx={{ border: '1px solid', borderColor: 'primary.contrastText', borderRadius: '4px', px: 1.5 }}
                 >
                     {translations.languageToggle}
                 </NavMenuItem>

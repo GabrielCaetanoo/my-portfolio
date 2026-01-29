@@ -7,8 +7,8 @@ import Experience from "../../components/Experience/Experience";
 import Skills from "../../components/Skills/Skills";
 import Projects from "../../components/Projects/Projects";
 import Footer from "../../components/Footer/Footer";
-import translationsEN from '../../public/locales/NavBar/en/translation.json';
-import translationsPT from '../../public/locales/NavBar/pt/translation.json';
+import translationsEN from '../../public/locales/en/translation.json';
+import translationsPT from '../../public/locales/pt/translation.json';
 import { Box } from "@mui/material";
 
 const Home = () => {
@@ -29,15 +29,20 @@ const Home = () => {
 
     return (
       <Box sx={{ backgroundColor: "background.default", minHeight: "100vh" }}>
+        {/* CORREÇÃO: Mapeamento explícito das chaves para a NavBar */}
         <NavBar 
-          translations={translations} 
+          translations={{
+            About: translations.hero.aboutMe,
+            Skills: translations.hero.mySkills,
+            Projects: translations.hero.projectsTitle,
+            languageToggle: translations.hero.languageToggle
+          }} 
           onAboutClick={() => handleScrollTo(aboutRef)}
           onSkillsClick={() => handleScrollTo(skillsRef)}
           onProjectsClick={() => handleScrollTo(projectsRef)}
           onToggleLanguage={toggleLanguage} 
         />
         
-        {/* CORREÇÃO: Removido o toggleLanguage daqui */}
         <Hero lang={lang} />
 
         <Box ref={aboutRef}>
@@ -56,10 +61,12 @@ const Home = () => {
             />
         </Box>
 
+        {/* CORREÇÃO: Mapeamento para o componente Projects */}
         <Box ref={projectsRef} sx={{ pb: 10 }}>
             <Projects translations={{
-                projectsTitle: lang === 'en' ? "Featured Projects" : "Projetos em Destaque",
-                viewOnGithub: lang === 'en' ? "View on GitHub" : "Ver no GitHub"
+                projectsTitle: translations.hero.projectsTitle,
+                viewOnGithub: translations.hero.viewOnGithub,
+                projects: translations.projects
             }} />
         </Box>
 
