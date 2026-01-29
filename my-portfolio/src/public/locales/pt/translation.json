@@ -1,20 +1,53 @@
 {
   "hero": {
     "name": "Gabriel Caetano",
-    "title": "Full Stack Developer | AI & LLM Specialist",
-    "downloadCV": "Download CV",
-    "contact": "Contact",
-    "aboutMe": "About Me",
-    "introduction": "Software Engineering student at UniCesumar with a strong analytical background from the finance sector. I focus on building scalable full-stack applications, merging the efficiency of the JavaScript ecosystem (React, Node.js, TypeScript) with the innovation of Artificial Intelligence (RAG/LLMs). I strive to turn technical challenges into solutions that deliver real-world impact.",
-    "mySkills": "My Skills",
-    "skillsIntro": "Technologies I use to build modern, high-performance digital products.",
-    "projectsTitle": "Featured Projects",
-    "viewOnGithub": "View on GitHub",
+    "title": "Full Stack Developer | Especialista em IA & RAG",
+    "downloadCV": "Baixar CV",
+    "contact": "Contato",
+    "aboutMe": "Sobre Mim",
+    "introduction": "Estudante de Engenharia de Software na UniCesumar com sólida base analítica vinda do setor financeiro. Foco na criação de aplicações full-stack escaláveis, unindo a eficiência do ecossistema JavaScript (React, Node.js, TypeScript) com a inovação de Inteligência Artificial (RAG/LLMs). Busco transformar desafios técnicos em soluções que gerem impacto real.",
+    "mySkills": "Minhas Habilidades",
+    "skillsIntro": "Tecnologias que utilizo para construir produtos digitais modernos e performáticos.",
+    "projectsTitle": "Projetos em Destaque",
+    "viewOnGithub": "Ver no GitHub",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "languageToggle": {
       "toEnglish": "English",
       "toPortuguese": "Português"
-    }
+    },
+    "About": "Sobre",
+    "Skills": "Habilidades",
+    "Projects": "Projetos"
+  },
+  "metrics": {
+    "title": "Impacto & Resultados",
+    "perf": "Aumento de Performance",
+    "perfDesc": "Otimização de busca e filtros na plataforma SBR Imóveis.",
+    "auto": "Automação de Processos",
+    "autoDesc": "Redução de operações manuais no Salon App via integração de IA.",
+    "time": "Tempo Economizado",
+    "timeDesc": "Economia de tempo administrativo no portal Uneagro."
+  },
+  "ai_showcase": {
+    "title": "Arquitetura de IA: Especialista em RAG",
+    "subtitle": "Não apenas prompts. Eu construo a infraestrutura que torna a IA precisa e integrada ao negócio.",
+    "step1": "Ingestão de Dados",
+    "step1Desc": "Extração e limpeza de dados brutos (agendamentos e preferências).",
+    "step2": "Vector Embeddings",
+    "step2Desc": "Conversão de texto em vetores para busca semântica.",
+    "step3": "Recuperação RAG",
+    "step3Desc": "Recuperação de contexto em tempo real para o prompt.",
+    "step4": "Resposta da IA",
+    "step4Desc": "Geração de respostas precisas e personalizadas."
+  },
+  "experience": {
+    "title": "Jornada Profissional",
+    "edu": "Engenharia de Software",
+    "eduDesc": "Foco em arquitetura de sistemas e desenvolvimento full-stack na UniCesumar.",
+    "dev": "Full Stack Developer (Freelance)",
+    "devDesc": "Desenvolvimento de soluções com IA e otimização de performance.",
+    "fin": "Assistente Financeiro",
+    "finDesc": "Visão analítica e gestão de processos na Construtora Planespaço."
   }
 }

@@ -15,6 +15,39 @@
     "languageToggle": {
       "toEnglish": "English",
       "toPortuguese": "Português"
-    }
+    },
+    "About": "About",
+    "Skills": "Skills",
+    "Projects": "Projects"
+  },
+  "metrics": {
+    "title": "Impact & Results",
+    "perf": "Performance Boost",
+    "perfDesc": "Search and filter optimization on the SBR Imóveis platform.",
+    "auto": "Process Automation",
+    "autoDesc": "Reduction of manual operations in the Salon App via AI integration.",
+    "time": "Time Saved",
+    "timeDesc": "Administrative time savings on the Uneagro portal."
+  },
+  "ai_showcase": {
+    "title": "AI Architecture: RAG Specialist",
+    "subtitle": "Not just prompts. I build the infrastructure that makes AI accurate and business-integrated.",
+    "step1": "Data Ingestion",
+    "step1Desc": "Extraction and cleaning of raw data (schedules and preferences).",
+    "step2": "Vector Embeddings",
+    "step2Desc": "Conversion of text into vectors for semantic search.",
+    "step3": "RAG Retrieval",
+    "step3Desc": "Real-time context retrieval for the prompt.",
+    "step4": "AI Response",
+    "step4Desc": "Generation of accurate and personalized responses."
+  },
+  "experience": {
+    "title": "Professional Journey",
+    "edu": "Software Engineering",
+    "eduDesc": "Focus on system architecture and full-stack development at UniCesumar.",
+    "dev": "Full Stack Developer (Freelance)",
+    "devDesc": "Developing AI solutions and performance optimization.",
+    "fin": "Financial Assistant",
+    "finDesc": "Analytical vision and process management at Construtora Planespaço."
   }
 }

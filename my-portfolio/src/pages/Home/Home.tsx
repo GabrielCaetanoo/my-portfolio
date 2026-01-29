@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
 import Hero from "./sections/Hero/Hero";
 import NavBar from "../../components/StyledButton/NavBar/NavBar";
-// 1. Importe o novo componente de métricas
 import ImpactMetrics from "../../components/ImpactMetrics/ImpactMetrics";
 import AIShowcase from "../../components/AIShowcase/AIShowcase";
 import Experience from "../../components/Experience/Experience";
+import Projects from "../../components/Projects/Projects";
+import Footer from "../../components/Footer/Footer"; // Certifique-se de ter criado este arquivo
 import translationsEN from '../../public/locales/NavBar/en/translation.json';
 import translationsPT from '../../public/locales/NavBar/pt/translation.json';
 
@@ -29,22 +30,36 @@ const Home = () => {
     return (
       <>
         <NavBar 
-          translations={translations}
+          translations={translations} 
           onAboutClick={() => handleScrollTo(aboutRef)}
           onSkillsClick={() => handleScrollTo(skillsRef)}
           onProjectsClick={() => handleScrollTo(projectsRef)}
         />
+        
+        {/* Seção Principal */}
         <Hero 
           aboutRef={aboutRef} 
           skillsRef={skillsRef} 
           projectsRef={projectsRef} 
           toggleLanguage={toggleLanguage} 
-          lang={lang}                     
+          lang={lang} 
         />
-        {/* 2. Adicione a seção de métricas aqui */}
+
+        {/* Prova de Valor: Métricas e IA */}
         <ImpactMetrics /> 
-        <AIShowcase /> {/* Nova seção aqui */}
-        <Experience /> {/* Adicione aqui */}
+        <AIShowcase />
+
+        {/* Autoridade: Jornada e Projetos */}
+        <Experience />
+        <div ref={projectsRef}>
+            <Projects translations={{
+                projectsTitle: lang === 'en' ? "Featured Projects" : "Projetos em Destaque",
+                viewOnGithub: lang === 'en' ? "View on GitHub" : "Ver no GitHub"
+            }} />
+        </div>
+
+        {/* Fechamento */}
+        <Footer />
       </>
     );
 };
