@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useTheme, Box } from "@mui/material";
-import type { ISourceOptions } from "@tsparticles/engine"; // Tipagem forte para o build
+import type { ISourceOptions } from "@tsparticles/engine";
 
 const AnimatedBackground = () => {
     const [init, setInit] = useState(false);
@@ -17,7 +17,6 @@ const AnimatedBackground = () => {
         });
     }, []);
 
-    // Definimos as opções fora para garantir que o TypeScript valide tudo
     const options: ISourceOptions = {
         fullScreen: { enable: false },
         background: { color: { value: "transparent" } },
@@ -28,7 +27,7 @@ const AnimatedBackground = () => {
                 color: neonColor,
                 distance: 180,
                 enable: true,
-                opacity: 0.5, // Aumentado para visibilidade
+                opacity: 0.5,
                 width: 1.5,
             },
             move: {
@@ -38,8 +37,13 @@ const AnimatedBackground = () => {
                 outModes: { default: "out" },
             },
             number: {
-                density: { enable: true, area: 800 },
-                value: 100, // Mais partículas para preencher o fundo
+                // CORREÇÃO: Removido 'area' e adicionado a nova estrutura de densidade
+                density: { 
+                    enable: true, 
+                    width: 1920, 
+                    height: 1080 
+                },
+                value: 100,
             },
             opacity: { value: 0.6 },
             shape: { type: "circle" },
