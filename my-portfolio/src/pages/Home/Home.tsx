@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react"; // useEffect adicionado
 import Hero from "./sections/Hero/Hero";
 import NavBar from "../../components/StyledButton/NavBar/NavBar";
 import ImpactMetrics from "../../components/ImpactMetrics/ImpactMetrics";
@@ -12,6 +12,12 @@ import translationsPT from '../../public/locales/pt/translation.json';
 import { Box } from "@mui/material";
 
 const Home = () => {
+    // RESET DE SCROLL NO F5
+    useEffect(() => {
+        window.history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+    }, []);
+
     const aboutRef = useRef<HTMLDivElement>(null);
     const skillsRef = useRef<HTMLDivElement>(null);
     const projectsRef = useRef<HTMLDivElement>(null);
@@ -29,7 +35,6 @@ const Home = () => {
 
     return (
       <Box sx={{ backgroundColor: "background.default", minHeight: "100vh" }}>
-        {/* CORREÇÃO: Mapeamento explícito das chaves para a NavBar */}
         <NavBar 
           translations={{
             About: translations.hero.aboutMe,
@@ -61,7 +66,6 @@ const Home = () => {
             />
         </Box>
 
-        {/* CORREÇÃO: Mapeamento para o componente Projects */}
         <Box ref={projectsRef} sx={{ pb: 10 }}>
             <Projects translations={{
                 projectsTitle: translations.hero.projectsTitle,
