@@ -4,6 +4,8 @@ import SmartToyIcon from '@mui/icons-material/SmartToy';
 import StorageIcon from '@mui/icons-material/Storage';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import SchemaIcon from '@mui/icons-material/Schema';
+// Importe a imagem do diagrama profissional gerada
+import RAGDiagram from '../../../assets/images/rag-diagram.png'; 
 
 const AIShowcase = () => {
     const steps = [
@@ -84,11 +86,22 @@ const AIShowcase = () => {
                     ))}
                 </Grid>
 
-                {/* Diagrama Simbolizado */}
+                {/* Seção do Diagrama Profissional */}
                 <Box sx={{ mt: 10, textAlign: 'center' }}>
-                    [Image of Retrieval-Augmented Generation (RAG) Architecture Diagram]
-                    <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', mt: 2 }}>
-                        Arquitetura implementada no Salon App para automação de 30% das operações.
+                    <Box 
+                        component="img"
+                        src={RAGDiagram} 
+                        alt="RAG Architecture Diagram" 
+                        sx={{ 
+                            maxWidth: '100%', 
+                            height: 'auto', 
+                            borderRadius: '12px', 
+                            border: '1px solid rgba(100, 255, 218, 0.1)',
+                            boxShadow: '0 0 30px rgba(100, 255, 218, 0.05)'
+                        }}
+                    />
+                    <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', mt: 3, fontSize: '0.9rem' }}>
+                        Arquitetura de Retrieval-Augmented Generation (RAG) implementada no Salon App para automação de 30% das operações.
                     </Typography>
                 </Box>
             </Container>
