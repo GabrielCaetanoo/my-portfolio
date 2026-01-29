@@ -1,5 +1,5 @@
 import { Grid, Container, Typography, Box } from "@mui/material";
-import Avatar from "../../../../assets/images/avatar.jpg";
+import Avatar from "../../../../assets/images/avatar.png";
 import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
 import { AnimatedBackground } from '../../../../components/StyledButton/AnimatedBackground/AnimatedBackground';
