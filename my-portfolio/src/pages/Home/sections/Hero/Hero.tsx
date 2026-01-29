@@ -73,7 +73,7 @@ const Hero = ({ toggleLanguage, lang }: HeroProps) => {
                             </Grid>
                             <Grid item>
                                 <StyledButton onClick={toggleLanguage}>
-                                    🌐 {lang === 'en' ? "Português" : "English"}
+                                    🌐 {lang === 'en' ? "PT" : "EN"}
                                 </StyledButton>
                             </Grid>
                         </Grid>

@@ -1,9 +1,6 @@
 {
-    "About": "Sobre Mim",
-    "Skills": "Habilidades",
+    "About": "Sobre",
+    "Skills": "Stack",
     "Projects": "Projetos",
-    "languageToggle": {
-        "toPortuguese": "Mudar para Português",
-        "toEnglish": "Mudar para Inglês"
-    }
+    "languageToggle": "EN" 
 }

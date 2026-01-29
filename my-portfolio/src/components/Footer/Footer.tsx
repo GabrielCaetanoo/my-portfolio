@@ -43,7 +43,7 @@ const Footer = () => {
                             <LinkedInIcon />
                         </IconButton>
                         <IconButton 
-                            href="https://wa.me/5544999999999" // Não esqueça de colocar seu número real!
+                            href="https://wa.me/5544998596796" // Não esqueça de colocar seu número real!
                             target="_blank" 
                             sx={{ color: 'text.secondary', '&:hover': { color: '#64FFDA' } }}
                         >

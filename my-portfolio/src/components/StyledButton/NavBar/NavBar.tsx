@@ -1,17 +1,19 @@
-import { AppBar, MenuItem, Toolbar, styled } from "@mui/material"; // Box removido daqui
+import { AppBar, MenuItem, Toolbar, styled } from "@mui/material"; // Box e Typography removidos
 
 interface NavBarProps {
     onAboutClick: () => void;
     onSkillsClick: () => void;
     onProjectsClick: () => void;
+    onToggleLanguage: () => void;
     translations: {
         About: string;
         Skills: string;
         Projects: string;
+        languageToggle: string;
     };
 }
 
-const NavBar = ({ onAboutClick, onSkillsClick, onProjectsClick, translations }: NavBarProps) => {
+const NavBar = ({ onAboutClick, onSkillsClick, onProjectsClick, onToggleLanguage, translations }: NavBarProps) => {
     
     const StyledToolbar = styled(Toolbar)(({ theme }) => ({
         display: 'flex',
@@ -23,7 +25,9 @@ const NavBar = ({ onAboutClick, onSkillsClick, onProjectsClick, translations }: 
     }));
 
     const NavMenuItem = styled(MenuItem)(({ theme }) => ({
-        fontSize: '1rem',
+        fontSize: '0.9rem',
+        letterSpacing: '1px',
+        textTransform: 'uppercase',
         fontWeight: 500,
         color: theme.palette.text.primary,
         transition: 'all 0.3s ease-in-out',
@@ -46,14 +50,21 @@ const NavBar = ({ onAboutClick, onSkillsClick, onProjectsClick, translations }: 
             }}
         >
             <StyledToolbar>
-                <NavMenuItem onClick={onAboutClick}>
-                    {translations.About}
-                </NavMenuItem>
-                <NavMenuItem onClick={onSkillsClick}>
-                    {translations.Skills}
-                </NavMenuItem>
-                <NavMenuItem onClick={onProjectsClick}>
-                    {translations.Projects}
+                <NavMenuItem onClick={onAboutClick}>{translations.About}</NavMenuItem>
+                <NavMenuItem onClick={onSkillsClick}>{translations.Skills}</NavMenuItem>
+                <NavMenuItem onClick={onProjectsClick}>{translations.Projects}</NavMenuItem>
+                
+                <NavMenuItem 
+                    onClick={onToggleLanguage}
+                    sx={{ 
+                        border: '1px solid', 
+                        borderColor: 'primary.contrastText',
+                        borderRadius: '4px',
+                        px: 1.5,
+                        ml: { md: 4 }
+                    }}
+                >
+                    {translations.languageToggle}
                 </NavMenuItem>
             </StyledToolbar>
         </AppBar>
