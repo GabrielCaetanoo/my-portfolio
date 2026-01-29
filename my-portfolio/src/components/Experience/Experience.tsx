@@ -3,7 +3,7 @@ import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineC
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import CodeIcon from '@mui/icons-material/Code';
 import SchoolIcon from '@mui/icons-material/School';
-import theme from "../../../theme";
+import theme from "../../theme"; // Subir apenas dois níveis
 
 const Experience = () => {
     const experiences = [
