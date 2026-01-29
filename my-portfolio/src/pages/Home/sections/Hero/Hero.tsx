@@ -6,6 +6,7 @@ import { AnimatedBackground } from '../../../../components/StyledButton/Animated
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import theme from "../../../../theme";
 
+// Interface rigorosa para eliminar o erro de 'any'
 interface HeroTranslations {
     name: string;
     title: string;
@@ -27,19 +28,27 @@ interface HeroProps {
 const Hero = ({ translations, lang }: HeroProps) => {
     return (
         <Box sx={{ 
-            // APLICADO: Gradiente radial para criar profundidade e efeito de vinheta
+            // Gradiente radial para profundidade visual
             background: `radial-gradient(circle at 50% 50%, rgba(10, 25, 47, 0) 0%, rgba(10, 25, 47, 1) 100%), #0A192F`,
             color: "text.primary",
             height: "100vh", 
             display: "flex", 
             alignItems: "center", 
             position: 'relative', 
-            overflow: 'hidden' 
+            overflow: 'hidden',
+            // FIX: Força o canvas das partículas a preencher todo o Box
+            "& #tsparticles": {
+                position: "absolute !important",
+                height: "100% !important",
+                width: "100% !important",
+                top: 0,
+                left: 0
+            }
         }}>
-            {/* CAMADA 0: Fundo Animado */}
+            {/* CAMADA 0: Fundo Animado (Rede Neural) */}
             <AnimatedBackground />
 
-            {/* CAMADA 1: Conteúdo Principal */}
+            {/* CAMADA 1: Conteúdo (zIndex garante que botões sejam clicáveis) */}
             <Container maxWidth="lg" sx={{ zIndex: 1, position: 'relative' }}>
                 <Grid container spacing={4} alignItems="center">
                     <Grid item xs={12} md={5} textAlign="center">
@@ -47,7 +56,7 @@ const Hero = ({ translations, lang }: HeroProps) => {
                             <Box
                                 component="img"
                                 src={Avatar} 
-                                alt="Gabriel Caetano - Software Engineer"
+                                alt="Gabriel Caetano - AI & LLM Specialist"
                                 sx={{ 
                                     width: { xs: "250px", md: "350px" },
                                     height: { xs: "250px", md: "350px" },
