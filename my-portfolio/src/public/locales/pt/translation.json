@@ -15,30 +15,82 @@
     "title": "Trabalho Real, Números Reais",
     "subtitle": "Contados no histórico do git e em testes reais, não estimados.",
     "items": [
-      { "value": "65+", "label": "Cards de produto entregues", "desc": "Em 8 meses de Flugo: 47 no painel web em React e 18 no app em Flutter." },
-      { "value": "850+", "label": "Commits revisados por PR", "desc": "Toda mudança passa por pull request e revisão de código antes de chegar à produção." },
-      { "value": "400+", "label": "Testes automatizados", "desc": "Suíte do módulo de chat interno do app, com notificações push que abrem direto a conversa." },
-      { "value": "100%", "label": "Sucesso no teste de usabilidade", "desc": "5 usuários reais concluíram todas as tarefas no site da JL Drywall; as melhorias subiram no mesmo ciclo." }
+      {
+        "value": "65+",
+        "label": "Cards de produto entregues",
+        "desc": "Em 8 meses de Flugo: 47 no painel web em React e 18 no app em Flutter."
+      },
+      {
+        "value": "850+",
+        "label": "Commits revisados por PR",
+        "desc": "Toda mudança passa por pull request e revisão de código antes de chegar à produção."
+      },
+      {
+        "value": "400+",
+        "label": "Testes automatizados",
+        "desc": "Suíte do módulo de chat interno do app, com notificações push que abrem direto a conversa."
+      },
+      {
+        "value": "100%",
+        "label": "Sucesso no teste de usabilidade",
+        "desc": "5 usuários reais concluíram todas as tarefas no site da JL Drywall; as melhorias subiram no mesmo ciclo."
+      }
     ]
   },
   "ai_showcase": {
     "title": "Como Desenvolvo com Agentes de IA",
     "subtitle": "A IA escreve código rápido. O que deixa pronto para produção é o processo em volta: um plano que eu aprovo, um segundo agente revisando e checagens em toda mudança.",
     "steps": [
-      { "title": "Planejar", "desc": "O card vira um plano curto: arquivos, abordagem e riscos. Eu aprovo antes de qualquer linha de código." },
-      { "title": "Implementar", "desc": "Um agente implementador (Claude Code ou Codex) escreve o código numa branch própria, seguindo os padrões do projeto." },
-      { "title": "Revisar", "desc": "Um agente revisor lê o diff, e typecheck, lint e testes precisam passar. O que ele acha volta para o implementador." },
-      { "title": "Entregar", "desc": "Eu testo no app de verdade, abro o pull request e acompanho até o merge. Nada sobe sem conferência humana." }
+      {
+        "title": "Planejar",
+        "desc": "O card vira um plano curto: arquivos, abordagem e riscos. Eu aprovo antes de qualquer linha de código."
+      },
+      {
+        "title": "Implementar",
+        "desc": "Um agente implementador (Claude Code ou Codex) escreve o código numa branch própria, seguindo os padrões do projeto."
+      },
+      {
+        "title": "Revisar",
+        "desc": "Um agente revisor lê o diff, e typecheck, lint e testes precisam passar. O que ele acha volta para o implementador."
+      },
+      {
+        "title": "Entregar",
+        "desc": "Eu testo no app de verdade, abro o pull request e acompanho até o merge. Nada sobe sem conferência humana."
+      }
     ],
     "note": "Ferramentas: Claude Code, Codex, Git, Jira. Uso no dia a dia da Flugo e nos meus projetos."
   },
   "experience": {
     "title": "Trajetória Profissional",
     "items": [
-      { "period": "Abr 2026 - atual", "title": "Desenvolvedor Full Stack", "company": "Flugo · SaaS de experiência do cliente", "desc": "Painel em React + TypeScript e app em Flutter: torres de controle em tempo real (Firebase), chat interno com notificações push, integração com a API Java/AWS do time de backend e migração de módulos legados para React.", "type": "work" },
-      { "period": "2024 - atual", "title": "Desenvolvedor Full Stack (Freelancer)", "company": "Pequenos negócios de Maringá e região", "desc": "Sites, landing pages e painéis administrativos do briefing ao ar: Next.js, React, Supabase com Row Level Security, deploy na Vercel e SEO local.", "type": "code" },
-      { "period": "2024 - 2028", "title": "Bacharelado em Engenharia de Software", "company": "UniCesumar", "desc": "Fundamentos de engenharia de software, arquitetura de sistemas e programação orientada a objetos, aplicados em projetos reais durante o curso.", "type": "edu" },
-      { "period": "2021 - 2026", "title": "Assistente Administrativo Financeiro", "company": "Construtora Planespaço", "desc": "Contas a pagar, lançamentos e fechamento mensal no Sienge. Foi onde aprendi a organizar processos e dados, e comecei a automatizá-los.", "type": "fin" }
+      {
+        "period": "Abr 2026 - atual",
+        "title": "Desenvolvedor Full Stack",
+        "company": "Flugo · SaaS de experiência do cliente",
+        "desc": "Painel em React + TypeScript e app em Flutter: torres de controle em tempo real (Firebase), chat interno com notificações push, integração com a API Java/AWS do time de backend e migração de módulos legados para React.",
+        "type": "work"
+      },
+      {
+        "period": "2024 - atual",
+        "title": "Desenvolvedor Full Stack (Freelancer)",
+        "company": "Pequenos negócios de Maringá e região",
+        "desc": "Sites, landing pages e painéis administrativos do briefing ao ar: Next.js, React, Supabase com Row Level Security, deploy na Vercel e SEO local.",
+        "type": "code"
+      },
+      {
+        "period": "2024 - 2028",
+        "title": "Bacharelado em Engenharia de Software",
+        "company": "UniCesumar",
+        "desc": "Fundamentos de engenharia de software, arquitetura de sistemas e programação orientada a objetos, aplicados em projetos reais durante o curso.",
+        "type": "edu"
+      },
+      {
+        "period": "2021 - 2026",
+        "title": "Assistente Administrativo Financeiro",
+        "company": "Construtora Planespaço",
+        "desc": "Contas a pagar, lançamentos e fechamento mensal no Sienge. Foi onde aprendi a organizar processos e dados, e comecei a automatizá-los.",
+        "type": "fin"
+      }
     ]
   },
   "skills": {
@@ -49,12 +101,52 @@
     "liveDemo": "Ver no ar",
     "privateRepo": "Repositório privado",
     "items": [
-      { "id": "medtranscribe", "name": "MedTranscribe", "badge": "SaaS próprio · IA", "desc": "Transforma o áudio da consulta em prontuário estruturado: Whisper na transcrição e Claude nos dados clínicos. Supabase multi-tenant com Row Level Security e cobrança com Stripe.", "stack": "Next.js · Supabase · Claude · Whisper" },
-      { "id": "fe", "name": "Fé com Propósito", "badge": "Vitrine + painel", "desc": "Vitrine de moda com painel mobile para o dono cuidar do estoque e das peças sozinho. Escrita restrita a admins por RLS, testes de segurança e backup automatizados.", "stack": "Next.js · Supabase · GitHub Actions" },
-      { "id": "jl", "name": "JL Drywall", "badge": "Testado com usuários", "desc": "Site institucional feito para transformar busca local em orçamento pelo WhatsApp. Validado com 5 usuários reais e 100% de sucesso nas tarefas.", "stack": "React · Vite · Vercel", "demoUrl": "https://www.jldrywallmaringa.com.br" },
-      { "id": "uneagro", "name": "Portal UneAgro", "badge": "Mapas interativos", "desc": "Portal de pesquisa de um grupo de estudantes de Agronomia: polígonos das culturas sobre imagem de satélite, filtros na legenda e download de relatórios, tudo gerido pelo cliente num CMS.", "stack": "Next.js · Leaflet · Sanity", "demoUrl": "https://www.uneagromga.com.br" },
-      { "id": "sbr", "name": "SBR Imóveis", "badge": "Imobiliária", "desc": "Vitrine de imóveis com busca e filtros, destaques, botão de WhatsApp e área de admin para a imobiliária cadastrar os próprios imóveis.", "stack": "Next.js · Supabase · Tailwind", "demoUrl": "https://sbrimoveis.com.br" },
-      { "id": "salon", "name": "Salon App", "badge": "Agendamento", "desc": "Agendamento online para salões, com painel administrativo, login e bloqueio de horários indisponíveis.", "stack": "Next.js · Prisma · NextAuth", "demoUrl": "https://salao-beta2.vercel.app" }
+      {
+        "id": "medtranscribe",
+        "name": "MedTranscribe",
+        "badge": "SaaS próprio · IA",
+        "desc": "Transforma o áudio da consulta em prontuário estruturado: Whisper na transcrição e Claude nos dados clínicos. Supabase multi-tenant com Row Level Security e cobrança com Stripe.",
+        "stack": "Next.js · Supabase · Claude · Whisper"
+      },
+      {
+        "id": "fe",
+        "name": "Fé com Propósito",
+        "badge": "Vitrine + painel",
+        "desc": "Vitrine de moda com painel mobile para o dono cuidar do estoque e das peças sozinho. Escrita restrita a admins por RLS, testes de segurança e backup automatizados.",
+        "stack": "Next.js · Supabase · GitHub Actions"
+      },
+      {
+        "id": "jl",
+        "name": "JL Drywall",
+        "badge": "Testado com usuários",
+        "desc": "Site institucional feito para transformar busca local em orçamento pelo WhatsApp. Validado com 5 usuários reais e 100% de sucesso nas tarefas.",
+        "stack": "React · Vite · Vercel",
+        "demoUrl": "https://www.jldrywallmaringa.com.br"
+      },
+      {
+        "id": "chapa",
+        "name": "Chapa Crente",
+        "badge": "Cliente no ar",
+        "desc": "Landing page e presença digital de uma hamburgueria: história da marca, galeria e vídeo, formulário de franqueado para o WhatsApp, botão de pedido ligado ao sistema do iFood e perfil do Google com ~55 avaliações respondidas.",
+        "stack": "Next.js · Tailwind · Vercel",
+        "demoUrl": "https://chapacrente.com.br"
+      },
+      {
+        "id": "uneagro",
+        "name": "Portal UneAgro",
+        "badge": "Mapas interativos",
+        "desc": "Portal de pesquisa de um grupo de estudantes de Agronomia: polígonos das culturas sobre imagem de satélite, filtros na legenda e download de relatórios, tudo gerido pelo cliente num CMS.",
+        "stack": "Next.js · Leaflet · Sanity",
+        "demoUrl": "https://www.uneagromga.com.br"
+      },
+      {
+        "id": "sbr",
+        "name": "SBR Imóveis",
+        "badge": "Imobiliária",
+        "desc": "Vitrine de imóveis com busca e filtros, destaques, botão de WhatsApp e área de admin para a imobiliária cadastrar os próprios imóveis.",
+        "stack": "Next.js · Supabase · Tailwind",
+        "demoUrl": "https://sbrimoveis.com.br"
+      }
     ]
   },
   "footer": {
