@@ -1,52 +1,64 @@
 {
   "hero": {
     "name": "Gabriel Caetano",
-    "title": "Full Stack Developer | AI & LLM Specialist",
+    "title": "Full Stack Developer | React · TypeScript · Flutter",
+    "tagline": "I build a customer-service SaaS in production, on the web dashboard and the mobile app, using an AI-assisted workflow with code review and tests on every delivery.",
     "downloadCV": "Download CV",
     "contact": "Contact",
     "aboutMe": "About",
-    "introduction": "Software Engineering student at UniCesumar with a strong analytical background from the finance sector. I focus on building scalable full-stack applications, merging the efficiency of the JavaScript ecosystem (React, Node.js, TypeScript) with the innovation of Artificial Intelligence (RAG/LLMs). I strive to turn technical challenges into solutions that deliver real-world impact.",
     "mySkills": "Tech Stack",
     "projectsTitle": "Featured Projects",
     "viewOnGithub": "View on GitHub",
     "languageToggle": "PT"
   },
   "metrics": {
-    "title": "Impact & Results",
-    "perf": "Performance Boost",
-    "perfDesc": "40% optimization in search and filtering on the SBR Imóveis platform.",
-    "auto": "Process Automation",
-    "autoDesc": "30% reduction in manual operations in the Salon App via AI integration.",
-    "time": "Time Saved",
-    "timeDesc": "5 hours of administrative time saved weekly on the Uneagro portal."
+    "title": "Real Work, Real Numbers",
+    "subtitle": "Counted from git history and real tests, not estimates.",
+    "items": [
+      { "value": "65+", "label": "Product tickets shipped", "desc": "In 8 months at Flugo: 47 on the React web dashboard and 18 on the Flutter app." },
+      { "value": "850+", "label": "PR-reviewed commits", "desc": "Every change goes through a pull request and code review before reaching production." },
+      { "value": "400+", "label": "Automated tests", "desc": "Test suite for the in-app chat module, with push notifications that deep-link into the conversation." },
+      { "value": "100%", "label": "Usability test success", "desc": "5 real users completed every task on the JL Drywall website; the improvements shipped in the same cycle." }
+    ]
   },
   "ai_showcase": {
-    "title": "AI Architecture: RAG Specialist",
-    "subtitle": "Beyond prompts. I build the infrastructure that makes AI accurate, secure, and business-ready.",
-    "step1": "Data Ingestion",
-    "step1Desc": "Extraction and cleaning of raw data (schedules and preferences).",
-    "step2": "Vector Embeddings",
-    "step2Desc": "Converting text into vectors for semantic search in Vector DBs.",
-    "step3": "RAG Retrieval",
-    "step3Desc": "Real-time context retrieval to power the LLM prompt.",
-    "step4": "AI Response",
-    "step4Desc": "Generation of accurate and personalized responses for the end user."
+    "title": "How I Build with AI Agents",
+    "subtitle": "AI writes code fast. What makes it production-ready is the process around it: a plan I approve, a second agent reviewing, and checks on every change.",
+    "steps": [
+      { "title": "Plan", "desc": "The ticket becomes a short plan: files, approach and risks. I approve it before any code is written." },
+      { "title": "Implement", "desc": "An implementer agent (Claude Code or Codex) writes the code on its own branch, following the project's patterns." },
+      { "title": "Review", "desc": "A reviewer agent reads the diff, while typecheck, lint and tests must pass. Findings go back to the implementer." },
+      { "title": "Ship", "desc": "I test it in the real app, open the pull request and follow it to merge. Nothing ships without a human check." }
+    ],
+    "note": "Tools: Claude Code, Codex, Git, Jira. Used daily at Flugo and in my own projects."
   },
   "experience": {
     "title": "Professional Journey",
-    "edu": "Software Engineering",
-    "eduDesc": "Focus on system architecture and full-stack development at UniCesumar.",
-    "dev": "Full Stack Developer (Freelance)",
-    "devDesc": "Developing AI solutions and high-performance applications for real-world clients.",
-    "fin": "Financial Assistant",
-    "finDesc": "Analytical mindset and process management at Construtora Planespaço."
+    "items": [
+      { "period": "Apr 2026 - present", "title": "Full Stack Developer", "company": "Flugo · customer-experience SaaS", "desc": "React + TypeScript dashboard and Flutter app: real-time control towers (Firebase), in-app chat with push notifications, integration with the backend team's Java/AWS API, and migration of legacy modules to React.", "type": "work" },
+      { "period": "2024 - present", "title": "Full Stack Developer (Freelance)", "company": "Small businesses in Maringá, Brazil", "desc": "Websites, landing pages and admin panels from brief to launch: Next.js, React, Supabase with Row Level Security, Vercel deploys and local SEO.", "type": "code" },
+      { "period": "2024 - 2028", "title": "B.Sc. in Software Engineering", "company": "UniCesumar", "desc": "Software engineering fundamentals, system architecture and object-oriented programming, applied in real projects along the way.", "type": "edu" },
+      { "period": "2021 - 2026", "title": "Financial Assistant", "company": "Construtora Planespaço", "desc": "Accounts payable, payment entries and monthly closing in Sienge. Where I learned to organize processes and data, and started automating them.", "type": "fin" }
+    ]
+  },
+  "skills": {
+    "title": "Tech Stack",
+    "intro": "What I use every day to ship web and mobile products in production."
   },
   "projects": {
-    "sbr_title": "SBR Imóveis",
-    "sbr_desc": "High-performance real estate platform with optimized search algorithms (40% speed gain).",
-    "salon_title": "Salon App (AI)",
-    "salon_desc": "Smart RAG-integrated system for automated scheduling, reducing 30% of operational workload.",
-    "uneagro_title": "Uneagro Portal",
-    "uneagro_desc": "Administrative management and agricultural mapping focused on productivity (5h saved/week)."
+    "liveDemo": "Live Demo",
+    "privateRepo": "Private repository",
+    "items": [
+      { "id": "medtranscribe", "name": "MedTranscribe", "badge": "Own SaaS · AI", "desc": "Turns consultation audio into a structured clinical record: Whisper for transcription and Claude for clinical data. Multi-tenant Supabase with Row Level Security and Stripe billing.", "stack": "Next.js · Supabase · Claude · Whisper" },
+      { "id": "fe", "name": "Fé com Propósito", "badge": "Storefront + admin", "desc": "Apparel storefront with a mobile admin panel so the owner runs stock and products on his own. Writes locked to admins by RLS, automated security tests and backups.", "stack": "Next.js · Supabase · GitHub Actions" },
+      { "id": "jl", "name": "JL Drywall", "badge": "Usability-tested", "desc": "Company website built to turn local search into WhatsApp quotes. Validated with 5 real users and a 100% task success rate.", "stack": "React · Vite · Vercel", "demoUrl": "https://www.jldrywallmaringa.com.br" },
+      { "id": "uneagro", "name": "UneAgro Portal", "badge": "Interactive maps", "desc": "Research portal for an agronomy student group: crop polygons over satellite imagery, legend filters and report downloads, all managed by the client in a headless CMS.", "stack": "Next.js · Leaflet · Sanity", "demoUrl": "https://www.uneagromga.com.br" },
+      { "id": "sbr", "name": "SBR Imóveis", "badge": "Real estate", "desc": "Property listings with search and filters, featured properties, WhatsApp button and an admin area where the agency manages its own listings.", "stack": "Next.js · Supabase · Tailwind", "demoUrl": "https://sbrimoveis.com.br" },
+      { "id": "salon", "name": "Salon App", "badge": "Booking system", "desc": "Appointment booking for beauty salons with an admin dashboard, authentication and blocking of unavailable time slots.", "stack": "Next.js · Prisma · NextAuth", "demoUrl": "https://salao-beta2.vercel.app" }
+    ]
+  },
+  "footer": {
+    "tagline": "Full Stack Developer | React · TypeScript · Flutter",
+    "built": "Built with React, TypeScript and Material UI."
   }
 }

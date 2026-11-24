@@ -1,5 +1,5 @@
 import { Grid, Container, Typography, Box } from "@mui/material";
-import Avatar from "../../../../assets/images/avatar.png";
+import Avatar from "../../../../assets/images/avatar.webp";
 import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
@@ -8,6 +8,7 @@ import theme from "../../../../theme";
 interface HeroTranslations {
     name: string;
     title: string;
+    tagline: string;
     downloadCV: string;
     contact: string;
     aboutMe: string;
@@ -84,7 +85,7 @@ const Hero = ({ translations, lang }: HeroProps) => {
                             <Box
                                 component="img"
                                 src={Avatar} 
-                                alt="Gabriel Caetano - AI & LLM Specialist"
+                                alt="Gabriel Caetano, Full Stack Developer"
                                 sx={{ 
                                     width: { xs: "250px", md: "350px" },
                                     height: { xs: "250px", md: "350px" },
@@ -112,22 +113,38 @@ const Hero = ({ translations, lang }: HeroProps) => {
                         }}>
                             {translations.name}
                         </Typography>
-                        <Typography variant="h2" sx={{ 
-                            mb: 4, 
-                            fontSize: { xs: '1.2rem', md: '2.2rem' }, 
+                        <Typography variant="h2" sx={{
+                            mb: 2,
+                            fontSize: { xs: '1.2rem', md: '2rem' },
                             color: "primary.contrastText",
                             fontWeight: 400,
                             opacity: 0.9
                         }}>
-                            {translations.title}
+                            {/* "Cargo | stack": cada parte numa linha, a stack sem quebrar no meio */}
+                            {translations.title.split(' | ').map((part, i) => (
+                                <Box component="span" key={part} sx={{ display: 'block', whiteSpace: i > 0 ? 'nowrap' : 'normal', opacity: i > 0 ? 0.85 : 1 }}>
+                                    {part}
+                                </Box>
+                            ))}
                         </Typography>
-                        
+                        <Typography sx={{
+                            mb: 4,
+                            maxWidth: 620,
+                            mx: { xs: 'auto', md: 0 },
+                            color: 'text.secondary',
+                            fontSize: { xs: '1rem', md: '1.15rem' },
+                            lineHeight: 1.7
+                        }}>
+                            {translations.tagline}
+                        </Typography>
+
                         <Grid container spacing={2} justifyContent={{ xs: 'center', md: 'flex-start' }}>
                             <Grid item>
                                 <StyledButton onClick={() => {
-                                    const resumeUrl = lang === 'pt' 
-                                        ? "https://drive.google.com/file/d/1tlH3a-1RBL6hyIfHn-nQlBzlUgGYEGYn/view?usp=drive_link" 
-                                        : "https://drive.google.com/file/d/1gVqtR1GMMZI0TxvaD3IXUPYlCg5rrJI2/view?usp=drive_link";
+                                    // CVs servidos pelo próprio site (pasta public/), sempre a versão atual
+                                    const resumeUrl = lang === 'pt'
+                                        ? "/cv-gabriel-caetano.pdf"
+                                        : "/cv-gabriel-caetano-en.pdf";
                                     window.open(resumeUrl, "_blank");
                                 }}>
                                     <DownloadIcon sx={{ mr: 1 }} />

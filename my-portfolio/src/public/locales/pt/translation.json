@@ -1,52 +1,64 @@
 {
   "hero": {
     "name": "Gabriel Caetano",
-    "title": "Full Stack Developer | Especialista em IA & RAG",
+    "title": "Desenvolvedor Full Stack | React · TypeScript · Flutter",
+    "tagline": "Construo um SaaS de atendimento em produção, no painel web e no app mobile, com um fluxo de desenvolvimento com agentes de IA, revisão de código e testes em toda entrega.",
     "downloadCV": "Baixar CV",
     "contact": "Contato",
     "aboutMe": "Sobre",
-    "introduction": "Estudante de Engenharia de Software na UniCesumar com sólida base analítica vinda do setor financeiro. Foco na criação de aplicações full-stack escaláveis, unindo a eficiência do ecossistema JavaScript (React, Node.js, TypeScript) com a inovação de Inteligência Artificial (RAG/LLMs). Busco transformar desafios técnicos em soluções que gerem impacto real.",
-    "mySkills": "Stack Tecnológica",
+    "mySkills": "Tecnologias",
     "projectsTitle": "Projetos em Destaque",
     "viewOnGithub": "Ver no GitHub",
     "languageToggle": "EN"
   },
   "metrics": {
-    "title": "Impacto & Resultados",
-    "perf": "Aumento de Performance",
-    "perfDesc": "Otimização de 40% na busca e filtros da plataforma SBR Imóveis.",
-    "auto": "Automação de Processos",
-    "autoDesc": "Redução de 30% nas operações manuais no Salon App via integração de IA.",
-    "time": "Tempo Economizado",
-    "timeDesc": "Economia de 5h semanais em tarefas administrativas no portal Uneagro."
+    "title": "Trabalho Real, Números Reais",
+    "subtitle": "Contados no histórico do git e em testes reais, não estimados.",
+    "items": [
+      { "value": "65+", "label": "Cards de produto entregues", "desc": "Em 8 meses de Flugo: 47 no painel web em React e 18 no app em Flutter." },
+      { "value": "850+", "label": "Commits revisados por PR", "desc": "Toda mudança passa por pull request e revisão de código antes de chegar à produção." },
+      { "value": "400+", "label": "Testes automatizados", "desc": "Suíte do módulo de chat interno do app, com notificações push que abrem direto a conversa." },
+      { "value": "100%", "label": "Sucesso no teste de usabilidade", "desc": "5 usuários reais concluíram todas as tarefas no site da JL Drywall; as melhorias subiram no mesmo ciclo." }
+    ]
   },
   "ai_showcase": {
-    "title": "Arquitetura de IA: Especialista em RAG",
-    "subtitle": "Não apenas prompts. Eu construo a infraestrutura que torna a IA precisa, segura e integrada ao negócio.",
-    "step1": "Data Ingestion",
-    "step1Desc": "Extração e limpeza de dados brutos (agendamentos e preferências).",
-    "step2": "Vector Embeddings",
-    "step2Desc": "Conversão de texto em vetores para busca semântica em Vector DBs.",
-    "step3": "RAG Retrieval",
-    "step3Desc": "Recuperação de contexto em tempo real para alimentar o prompt da LLM.",
-    "step4": "AI Response",
-    "step4Desc": "Geração de respostas precisas e personalizadas para o usuário."
+    "title": "Como Desenvolvo com Agentes de IA",
+    "subtitle": "A IA escreve código rápido. O que deixa pronto para produção é o processo em volta: um plano que eu aprovo, um segundo agente revisando e checagens em toda mudança.",
+    "steps": [
+      { "title": "Planejar", "desc": "O card vira um plano curto: arquivos, abordagem e riscos. Eu aprovo antes de qualquer linha de código." },
+      { "title": "Implementar", "desc": "Um agente implementador (Claude Code ou Codex) escreve o código numa branch própria, seguindo os padrões do projeto." },
+      { "title": "Revisar", "desc": "Um agente revisor lê o diff, e typecheck, lint e testes precisam passar. O que ele acha volta para o implementador." },
+      { "title": "Entregar", "desc": "Eu testo no app de verdade, abro o pull request e acompanho até o merge. Nada sobe sem conferência humana." }
+    ],
+    "note": "Ferramentas: Claude Code, Codex, Git, Jira. Uso no dia a dia da Flugo e nos meus projetos."
   },
   "experience": {
-    "title": "Jornada Profissional",
-    "edu": "Engenharia de Software",
-    "eduDesc": "Foco em arquitetura de sistemas e desenvolvimento full-stack na UniCesumar.",
-    "dev": "Full Stack Developer (Freelance)",
-    "devDesc": "Desenvolvimento de soluções com IA e otimização de performance para clientes reais.",
-    "fin": "Assistente Financeiro",
-    "finDesc": "Visão analítica e gestão de processos na Construtora Planespaço."
+    "title": "Trajetória Profissional",
+    "items": [
+      { "period": "Abr 2026 - atual", "title": "Desenvolvedor Full Stack", "company": "Flugo · SaaS de experiência do cliente", "desc": "Painel em React + TypeScript e app em Flutter: torres de controle em tempo real (Firebase), chat interno com notificações push, integração com a API Java/AWS do time de backend e migração de módulos legados para React.", "type": "work" },
+      { "period": "2024 - atual", "title": "Desenvolvedor Full Stack (Freelancer)", "company": "Pequenos negócios de Maringá e região", "desc": "Sites, landing pages e painéis administrativos do briefing ao ar: Next.js, React, Supabase com Row Level Security, deploy na Vercel e SEO local.", "type": "code" },
+      { "period": "2024 - 2028", "title": "Bacharelado em Engenharia de Software", "company": "UniCesumar", "desc": "Fundamentos de engenharia de software, arquitetura de sistemas e programação orientada a objetos, aplicados em projetos reais durante o curso.", "type": "edu" },
+      { "period": "2021 - 2026", "title": "Assistente Administrativo Financeiro", "company": "Construtora Planespaço", "desc": "Contas a pagar, lançamentos e fechamento mensal no Sienge. Foi onde aprendi a organizar processos e dados, e comecei a automatizá-los.", "type": "fin" }
+    ]
+  },
+  "skills": {
+    "title": "Tecnologias",
+    "intro": "O que eu uso todo dia para entregar produtos web e mobile em produção."
   },
   "projects": {
-    "sbr_title": "SBR Imóveis",
-    "sbr_desc": "Plataforma imobiliária de alta performance com algoritmos de busca otimizados (ganho de 40% em velocidade).",
-    "salon_title": "Salon App (AI)",
-    "salon_desc": "Sistema inteligente com RAG para automação de agendamentos, reduzindo 30% da carga operacional.",
-    "uneagro_title": "Portal Uneagro",
-    "uneagro_desc": "Gestão administrativa e mapeamento agrícola com foco em produtividade (5h economizadas/semana)."
+    "liveDemo": "Ver no ar",
+    "privateRepo": "Repositório privado",
+    "items": [
+      { "id": "medtranscribe", "name": "MedTranscribe", "badge": "SaaS próprio · IA", "desc": "Transforma o áudio da consulta em prontuário estruturado: Whisper na transcrição e Claude nos dados clínicos. Supabase multi-tenant com Row Level Security e cobrança com Stripe.", "stack": "Next.js · Supabase · Claude · Whisper" },
+      { "id": "fe", "name": "Fé com Propósito", "badge": "Vitrine + painel", "desc": "Vitrine de moda com painel mobile para o dono cuidar do estoque e das peças sozinho. Escrita restrita a admins por RLS, testes de segurança e backup automatizados.", "stack": "Next.js · Supabase · GitHub Actions" },
+      { "id": "jl", "name": "JL Drywall", "badge": "Testado com usuários", "desc": "Site institucional feito para transformar busca local em orçamento pelo WhatsApp. Validado com 5 usuários reais e 100% de sucesso nas tarefas.", "stack": "React · Vite · Vercel", "demoUrl": "https://www.jldrywallmaringa.com.br" },
+      { "id": "uneagro", "name": "Portal UneAgro", "badge": "Mapas interativos", "desc": "Portal de pesquisa de um grupo de estudantes de Agronomia: polígonos das culturas sobre imagem de satélite, filtros na legenda e download de relatórios, tudo gerido pelo cliente num CMS.", "stack": "Next.js · Leaflet · Sanity", "demoUrl": "https://www.uneagromga.com.br" },
+      { "id": "sbr", "name": "SBR Imóveis", "badge": "Imobiliária", "desc": "Vitrine de imóveis com busca e filtros, destaques, botão de WhatsApp e área de admin para a imobiliária cadastrar os próprios imóveis.", "stack": "Next.js · Supabase · Tailwind", "demoUrl": "https://sbrimoveis.com.br" },
+      { "id": "salon", "name": "Salon App", "badge": "Agendamento", "desc": "Agendamento online para salões, com painel administrativo, login e bloqueio de horários indisponíveis.", "stack": "Next.js · Prisma · NextAuth", "demoUrl": "https://salao-beta2.vercel.app" }
+    ]
+  },
+  "footer": {
+    "tagline": "Desenvolvedor Full Stack | React · TypeScript · Flutter",
+    "built": "Feito com React, TypeScript e Material UI."
   }
 }
